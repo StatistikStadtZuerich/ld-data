@@ -1,5 +1,15 @@
-https://data.stadt-zuerich.ch/dataset/5fd779b6-64b3-4320-baa2-40e4de59dfc6/resource/261666ee-2ca0-43cb-927c-0f610e96cea1/download/stadtkreise.json
-https://data.stadt-zuerich.ch/dataset/statistisches_quartier/resource/c837926e-035d-48b9-8656-03f1b13c323b/download/statistische_quartiere.json
-https://data.stadt-zuerich.ch/dataset/be458d0f-65b2-44f3-8406-e6e5941f3f85/resource/256e764e-3185-43e7-87c8-ded1f95bd4ff/download/statistische_zonen.json
-https://data.stadt-zuerich.ch/dataset/wahlkreis/resource/a9536ffe-2dba-42cf-975d-fe882f9f794a/download/wahlkreis.json
-https://data.stadt-zuerich.ch/dataset/schulkreis/resource/7d688fe8-b43c-4bb2-a4be-828042ad2bd4/download/schulkreis.json
+Stadtkreise:
+https://www.ogd.stadt-zuerich.ch/wfs/geoportal/Stadtkreise?service=WFS&version=1.0.0&request=GetFeature&typename=adm_stadtkreise_v&outputFormat=GeoJSON
+
+Statistische Stadtquartiere:
+https://www.ogd.stadt-zuerich.ch/wfs/geoportal/Statistische_Quartiere?service=WFS&version=1.0.0&request=GetFeature&typename=adm_statistische_quartiere_map&outputFormat=GeoJSON
+
+Statistische Zonen:
+https://www.ogd.stadt-zuerich.ch/wfs/geoportal/Statistische_Zonen?service=WFS&version=1.0.0&request=GetFeature&typename=adm_statzonen_map&outputFormat=GeoJSON
+
+Wahlkreise (hier nun Stimmkreise genannt. Bedeuten aber dasselbe):
+https://www.ogd.stadt-zuerich.ch/wfs/geoportal/Stimmkreise?service=WFS&version=1.0.0&request=GetFeature&typename=adm_zaehlkreise_a&outputFormat=GeoJSON
+
+Schulkreise:
+https://www.ogd.stadt-zuerich.ch/wfs/geoportal/Schulkreise?service=WFS&version=1.0.0&request=GetFeature&typename=adm_schulkreise_a&outputFormat=GeoJSON
+

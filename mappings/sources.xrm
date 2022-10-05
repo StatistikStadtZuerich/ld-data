@@ -286,7 +286,7 @@ logical-source HDB_DATENOBJEKTE {
 		DOOGDStatusID
 		DORaeumlicheBeziehung
 		DORechtsgrundlagenID
-		DOSchluesselwoerter1
+		DOSchluesselwoerter
 		DOuebergordneterDBID
 		StatusNummer
 		WFDOKoor
@@ -364,7 +364,6 @@ logical-source HDB_DATENATTRIBUTE {
 		DAOGDRechtsgrundlagenID
 		DAOGDStatus
 		DAOrganisationsrecht
-		DARisiken
 		DARolleDatenKuratorId
 		DARolleDatenVerantwortlicherId
 		DARolletechnDatenmanagerId

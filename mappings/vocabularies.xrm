@@ -257,5 +257,8 @@ vocabulary ssz {
     legalFoundation
     dataQuality
     usageNotes
+    dataType
+    dataUnit
+    valueList
 }
 

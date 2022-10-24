@@ -23,6 +23,10 @@
 				"titles": "ZEIT"
 			},
 			{
+				"propertyUrl": "http://schema.org/termCode",
+				"titles": "ZEIT"
+			},
+			{
 				"propertyUrl": "https://ld.stadt-zuerich.ch/schema/hasEnd",
 				"datatype": "date",
 				"titles": "STICHTAGDATUM"

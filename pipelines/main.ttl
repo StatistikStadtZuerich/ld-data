@@ -36,9 +36,7 @@
     p:value "observation/*.json"
   ], [ a p:Variable;
     p:name "dimensionCsvMappingFilePattern";
-#    p:value "src-gen/mapping_+(datenobjekte*|datenattribute|rechtsgrundlage).csv.meta.json"
-    p:value "src-gen/mapping_!(hdb|datenattribute).csv.meta.json" 
-
+    p:value "src-gen/mapping_!(hdb|datenattribute).csv.meta.json"
   ], [ a p:Variable;
     p:name "destinationGraph";
     p:value "https://lindas.admin.ch/stadtzuerich/stat"
@@ -109,10 +107,15 @@
 # Cube Pipeline & Steps
 #
 <cubes> a p:Pipeline, p:ReadableObjectMode;
+  p:variables [
+    p:variable [ a p:Variable;
+      p:name "csvMapping";
+      p:value "observation/hdb.csv-metadata.json"
+    ]
+  ];
   p:steps [
     p:stepList (
-      <listCubeCsvwMetaFiles>
-      <forEachCubeCsvwMetaFile>
+      <readCubeCsvTriples>
     )
   ].
 
@@ -134,21 +137,6 @@
       <parseN3>
     )
   ].
-
-<listCubeCsvwMetaFiles> a p:Step;
-  code:implementedBy [ a code:EcmaScriptModule;
-    code:link <node:barnard59-base#glob>
-  ];
-  code:arguments[
-    code:name "pattern";
-    code:value "cubeCsvMappingFilePattern"^^p:VariableName
-  ].
-
-<forEachCubeCsvwMetaFile> a p:Step;
-  code:implementedBy [ a code:EcmaScriptModule;
-    code:link <node:barnard59-base/forEach.js#default>
-  ];
-  code:arguments (<readCubeCsvTriples> "csvMapping").
 
 <readCubeCsvTriples> a p:Pipeline, p:ReadableObjectMode;
   p:steps [

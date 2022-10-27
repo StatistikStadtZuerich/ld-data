@@ -145,8 +145,8 @@
       <parseCsv>
       <mapAll>
       <filterAll>
-      <routeTriples>
       <toDataset>
+      <routeObservations>
       <toObservation>
       <buildCubeShape>
       <flatten>
@@ -154,7 +154,7 @@
     )
   ].
 
-<routeTriples> a p:Step;
+<routeObservations> a p:Step;
   code:implementedBy [ a code:EcmaScriptModule;
     code:link <file:../lib/router.js#default>
   ];

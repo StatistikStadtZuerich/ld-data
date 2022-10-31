@@ -39,7 +39,7 @@ pipeline_int:
     - ./scripts/main.sh
   artifacts:
     paths:
-      - output/output.nt
+      - output/output.nt.gz
     expire_in: 1 day
 
 #pipeline_test:

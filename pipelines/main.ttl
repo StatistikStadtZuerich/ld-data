@@ -5,13 +5,13 @@
 
 <defaultVars>
   p:variable [ a p:Variable;
-    p:name "ENDPOINT_URL";
+    p:name "ENDPOINT";
     p:value "http://localhost:3030/data"
   ], [ a p:Variable;
-    p:name "ENDPOINT_USER";
+    p:name "GRAPHSTORE_USERNAME";
     p:value ""
   ], [ a p:Variable;
-    p:name "ENDPOINT_PASSWORD";
+    p:name "GRAPHSTORE_PASSWORD";
     p:value ""
   ], [ a p:Variable;
     p:name "observer";

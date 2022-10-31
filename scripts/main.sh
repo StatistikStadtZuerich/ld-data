@@ -8,7 +8,7 @@ then
     echo "File HDB_Full.zip exists, running main pipeline..."
     npm run fetch
     unzip input/HDB_Full.zip -d input # should be part of pipeline
-    #npm run output:file
+    npm run output:file
     npm run file:store
     #curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/cube-name-identifier.rq" $ENDPOINT/update
     #./scripts/ssz-views.sh

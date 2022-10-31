@@ -9,7 +9,7 @@
     "fetch": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/fetch pipelines/fetch.ttl --variable=SSH_HOST --variable=SSH_PORT --variable=SSH_USER --variable=SSH_PRIVATE_KEY",
     "fetchDiff": "dotenv -e .env.defaults -e .env -- ./start.sh FetchDiff",
     "output:file": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/toFile pipelines/main.ttl",
-    "file:store": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/fileToStore pipelines/main.ttl",
+    "file:store": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/fileToStore pipelines/main.ttl --variable=ENDPOINT --variable=GRAPHSTORE_USERNAME --variable=GRAPHSTORE_PASSWORD",
     "output:store": "dotenv -e .env.defaults -e .env -- ./start.sh MainStore",
     "output:dimensions:store": "dotenv -e .env.defaults -e .env -- ./start.sh DimensionsStore",
     "output:observations:store": "dotenv -e .env.defaults -e .env -- ./start.sh ObservationsStore",

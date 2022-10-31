@@ -1,5 +1,5 @@
 default:
-  image: docker.io/library/node:16
+  image: docker.io/library/node:18
 
 before_script:
   - mkdir -p ~/.ssh && echo -e "${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa && chmod og-rwx ~/.ssh/id_rsa
@@ -42,7 +42,7 @@ pipeline_int:
       - output/output.nt
     expire_in: 1 day
 
-pipeline_test:
+#pipeline_test:
 #  only:
 #    - develop
 #    variables:

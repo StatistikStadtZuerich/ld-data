@@ -7,9 +7,9 @@ then
     set -eo pipefail
     echo "File HDB_Full.zip exists, running main pipeline..."
     npm run fetch
-    unzip input/HDB_Full.zip -d input # shoudl be part of pipeline
-    npm run output:file
-    npn run file:store
+    unzip input/HDB_Full.zip -d input # should be part of pipeline
+    #npm run output:file
+    npm run file:store
     #curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/cube-name-identifier.rq" $ENDPOINT/update
     #./scripts/ssz-views.sh
     #echo "rename /upload/$SFTPENV/HDB_Full.zip /upload/$SFTPENV/done/HDB_Full.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org

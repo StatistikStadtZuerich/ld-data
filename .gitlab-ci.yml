@@ -37,19 +37,23 @@ pipeline_int:
     name: INT
   script:
     - ./scripts/main.sh
+  artifacts:
+    paths:
+      - output/output.nt
+    expire_in: 1 day
 
 pipeline_test:
 #  only:
 #    - develop
 #    variables:
     #  - $RELEASE == "zazuko"
-  tags:
-    - medium
-  environment:
-    name: TEST
-  script:
-    - ./scripts/main.sh
-  artifacts:
-    paths:
-      - output/output.nt
-    expire_in: 1 day
+#  tags:
+#    - medium
+#  environment:
+#    name: TEST
+#  script:
+#    - ./scripts/main.sh
+#  artifacts:
+#    paths:
+#      - output/output.nt
+#    expire_in: 1 day

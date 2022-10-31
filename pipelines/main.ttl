@@ -383,13 +383,13 @@
   ];
   code:arguments [
     code:name "endpoint";
-    code:value "ENDPOINT_URL"^^p:VariableName
+    code:value "ENDPOINT"^^p:VariableName
   ], [
     code:name "user";
-    code:value "ENDPOINT_USER"^^p:VariableName
+    code:value "GRAPHSTORE_USERNAME"^^p:VariableName
   ], [
     code:name "password";
-    code:value "ENDPOINT_PASSWORD"^^p:VariableName
+    code:value "GRAPHSTORE_PASSWORD"^^p:VariableName
   ], [
     code:name "maxQuadsPerRequest";
     code:value 10000000

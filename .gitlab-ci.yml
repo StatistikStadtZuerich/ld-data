@@ -37,10 +37,10 @@ pipeline_int:
     name: INT
   script:
     - ./scripts/main.sh
-  artifacts:
-    paths:
-      - output/output.nt.gz
-    expire_in: 1 day
+#  artifacts:
+#    paths:
+#      - output/output.nt.gz
+#    expire_in: 1 day
 
 #pipeline_test:
 #  only:

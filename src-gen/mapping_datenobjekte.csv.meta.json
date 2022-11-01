@@ -30,21 +30,22 @@
 				"titles": "id"
 			},
 			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/schema/metadataCreator",
+				"titles": "DOMetadatenErfasserId"
+			},
+			{
 				"propertyUrl": "http://schema.org/startDate",
+				"datatype": "date",
 				"titles": "DODatenvon"
 			},
 			{
 				"propertyUrl": "http://schema.org/endDate",
+				"datatype": "date",
 				"titles": "DODatenbis"
 			},
 			{
 				"propertyUrl": "http://purl.org/dc/terms/accrualPeriodicity",
 				"titles": "DOAktualisierung"
-			},
-			{
-				"propertyUrl": "http://purl.org/dc/terms/language",
-				"virtual": true,
-				"valueUrl": "http://www.wikidata.org/entity/Q188"
 			},
 			{
 				"propertyUrl": "http://purl.org/dc/terms/issued",
@@ -76,7 +77,7 @@
 			},
 			{
 				"propertyUrl": "http://www.w3.org/ns/dcat#keyword",
-				"titles": "DOSchluesselwoerter1"
+				"titles": "DOSchluesselwoerter"
 			},
 			{
 				"propertyUrl": "http://purl.org/dc/terms/license",
@@ -165,10 +166,6 @@
 			{
 				"suppressOutput": true,
 				"titles": "DOLaufnummer"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DOMetadatenErfasserId"
 			},
 			{
 				"suppressOutput": true,

@@ -19,6 +19,18 @@
 				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/view/{DAuebergordnetesDOID}"
 			},
 			{
+				"propertyUrl": "http://schema.org/name",
+				"titles": "DAName"
+			},
+			{
+				"propertyUrl": "http://schema.org/alternateName",
+				"titles": "DAtechFeldname"
+			},
+			{
+				"propertyUrl": "http://schema.org/description",
+				"titles": "DABeschreibung"
+			},
+			{
 				"suppressOutput": true,
 				"titles": "id"
 			},
@@ -368,23 +380,11 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DABeschreibung"
-			},
-			{
-				"suppressOutput": true,
 				"titles": "WFDAKoor"
 			},
 			{
 				"suppressOutput": true,
 				"titles": "DAMDQuellsystem"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAName"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAtechFeldname"
 			},
 			{
 				"suppressOutput": true,

@@ -8,6 +8,10 @@ map DATENATTRIBUTE from HDB_DATENATTRIBUTE {
 
   properties
     ssz.dataObject template viewIri with DAuebergordnetesDOID;
-    
-
+	schema.name from DAName;
+    schema.alternateName from DAtechFeldname;
+	schema.description from DABeschreibung;
+    ssz.dataType from DAFeldtyp;
+	ssz.dataUnit from DAFeldeinheit;
+	ssz.valueList from DAFeldwerteliste;
 }

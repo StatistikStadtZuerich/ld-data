@@ -11,6 +11,7 @@ map DATENOBJEKTE from HDB_DATENOBJEKTE {
     schema.name from DOName;
     schema.alternateName from DOMDQuellsystemID;
     schema.identifier from id;
+    ssz.metadataCreator from DOMetadatenErfasserId;
 
     schema.startDate from DODatenvon with datatype xsd.date;
     schema.endDate from DODatenbis  with datatype xsd.date;

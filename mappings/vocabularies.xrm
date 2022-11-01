@@ -260,5 +260,6 @@ vocabulary ssz {
     dataType
     dataUnit
     valueList
+    metadataCreator
 }
 

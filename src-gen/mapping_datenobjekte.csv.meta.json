@@ -30,6 +30,10 @@
 				"titles": "id"
 			},
 			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/schema/metadataCreator",
+				"titles": "DOMetadatenErfasserId"
+			},
+			{
 				"propertyUrl": "http://schema.org/startDate",
 				"datatype": "date",
 				"titles": "DODatenvon"
@@ -162,10 +166,6 @@
 			{
 				"suppressOutput": true,
 				"titles": "DOLaufnummer"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DOMetadatenErfasserId"
 			},
 			{
 				"suppressOutput": true,

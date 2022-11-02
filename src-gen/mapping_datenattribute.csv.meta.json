@@ -31,24 +31,28 @@
 				"titles": "DABeschreibung"
 			},
 			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/schema/dataType",
+				"titles": "DAFeldtyp"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/schema/dataUnit",
+				"titles": "DAFeldeinheit"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/schema/valueList",
+				"titles": "DAFeldwerteliste"
+			},
+			{
 				"suppressOutput": true,
 				"titles": "id"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DAAktualisierung"
+				"titles": "DAAndereDienstabteilung"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DAAktualisierungDaten"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAAktualisierungID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAAktualisierungsDatum"
+				"titles": "DAAndereDienstabteilungID"
 			},
 			{
 				"suppressOutput": true,
@@ -68,127 +72,23 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DADatenaustausch"
+				"titles": "DADienstabteilungsFilter"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DADatenaustauschID"
+				"titles": "DADienstabteilungsFilterID"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DADatenbezugBemerkungen"
+				"titles": "DAFeldeinheitID"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DADatenbezugLink1"
+				"titles": "DAFeldtypID"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DADatenbezugLink2"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DADatenbezugLink3"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DADatenbis"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DADatenelementIdentifikator"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DADatenlieferant"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DADatenlieferantID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DADatenvon"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DADatenzugang"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DADatenzugangID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DADienstabteilung"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DADienstabteilungID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAFachgesetz"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAFachgesetzBemerkungen"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAFachgesetzID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAFachgesetzLink1"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAFachgesetzLink2"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAFachgesetzLink3"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAFeldwerteliste"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAGeschaeftsbereich"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAHerkunft"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAHerkunftBemerkungen"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAHerkunftID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAIntegritaet"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAIntegritaetID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAKategorie"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAKategorieID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DALaufnummer"
+				"titles": "DAFeldwertelisteID"
 			},
 			{
 				"suppressOutput": true,
@@ -196,111 +96,23 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DAMetadatenErfasserId"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAMetadatenFreigabeId"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAMetadatenFreigabedatum"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DANachvollziehbarkeit"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DANachvollziehbarkeitID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DANutzungszweck"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDBemerkungen"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDFreigabeId"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDFreigabedatum"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDLizenz"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDLizenzID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDMassnahmen"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDMassnahmenID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDPrioritaet"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDPrioritaetID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDPruefung"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDPruefungID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDRechtsgrundlagen"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDRechtsgrundlagenID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOGDStatus"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAOrganisationsrecht"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DARisiken"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DARolleDatenKuratorId"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DARolleDatenVerantwortlicherId"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DARolletechnDatenmanagerId"
-			},
-			{
-				"suppressOutput": true,
 				"titles": "DASSZAuswertungsregel"
 			},
 			{
 				"suppressOutput": true,
+				"titles": "DASSZFeldwerteliste"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DASSZFeldwertelisteID"
+			},
+			{
+				"suppressOutput": true,
 				"titles": "DASSZLevel"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DASSZLevelID"
 			},
 			{
 				"suppressOutput": true,
@@ -312,39 +124,7 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DASchluesselwoerter"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DASchluesselwoerter0"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DASchluesselwoerterTermset"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAVerfuegbarkeit"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAVerfuegbarkeitID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAVeroeffentlichung"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAVeroeffentlichungID"
-			},
-			{
-				"suppressOutput": true,
 				"titles": "DAVertraulichkeit"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAVertraulichkeitBemerkungen"
 			},
 			{
 				"suppressOutput": true,
@@ -352,23 +132,11 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DAVertraulichkeitsPruefdatum"
+				"titles": "DAuebergeordneterDBName"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DAWeitergabe"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DAWeitergabeID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "StatusNummer"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "StatusText"
+				"titles": "DAuebergeordneterDOName"
 			},
 			{
 				"suppressOutput": true,
@@ -376,7 +144,15 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DAVertraulichkeitsPruefstelleId"
+				"titles": "DAAndereDienstabteilungEindeutig"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DADatenelementIdentifikator"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "StatusNummer"
 			},
 			{
 				"suppressOutput": true,
@@ -384,7 +160,23 @@
 			},
 			{
 				"suppressOutput": true,
+				"titles": "DADienstabteilungID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DADienstabteilung"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DALaufnummer"
+			},
+			{
+				"suppressOutput": true,
 				"titles": "DAMDQuellsystem"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAuebergordnetesDOID"
 			},
 			{
 				"suppressOutput": true,
@@ -392,7 +184,7 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DAuebergordnetesDOID"
+				"titles": "StatusText"
 			}
 		]
 	}

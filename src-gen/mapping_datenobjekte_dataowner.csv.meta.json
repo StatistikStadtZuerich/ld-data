@@ -79,11 +79,11 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DODatenelementID"
+				"titles": "DODatenformat"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DODatenvon"
+				"titles": "DODatenformatID"
 			},
 			{
 				"suppressOutput": true,
@@ -100,14 +100,6 @@
 			{
 				"suppressOutput": true,
 				"titles": "DOKategorieID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DOLaufnummer"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DOMetadatenErfasserId"
 			},
 			{
 				"suppressOutput": true,
@@ -163,11 +155,15 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DORaeumlicheBeziehungID"
+				"titles": "DOPersonendaten"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DORechtsgrundlagen"
+				"titles": "DOPersonendatenID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORaeumlicheBeziehungID"
 			},
 			{
 				"suppressOutput": true,
@@ -199,18 +195,6 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DOSchluesselwoerterTermset"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DOSchutzstufe"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DOSchutzstufeID"
-			},
-			{
-				"suppressOutput": true,
 				"titles": "DOVeroeffentlichung"
 			},
 			{
@@ -239,11 +223,15 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DOWeitergabeID"
+				"titles": "DOWeitergabeFilter"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "StatusText"
+				"titles": "DOWeitergabeFilterID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOWeitergabeID"
 			},
 			{
 				"suppressOutput": true,
@@ -255,11 +243,11 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DOVertraulichkeitsPruefstelleId"
+				"titles": "DORechtsgrundlagenWeitergabeBeme"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DOAktualisierung"
+				"titles": "DOVertraulichkeitsPruefstelleId"
 			},
 			{
 				"suppressOutput": true,
@@ -267,7 +255,59 @@
 			},
 			{
 				"suppressOutput": true,
+				"titles": "DOAktualisierung"
+			},
+			{
+				"suppressOutput": true,
 				"titles": "DOBeschreibungBemerkungen"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenelementID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOKategorie"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOLaufnummer"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOMetadatenErfasserId"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOMetadatenFreigabedatum"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDLizenz"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORechtsgrundlagen"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORechtsgrundlagenID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOuebergordneterDB"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "StatusNummer"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "StatusText"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "WFDOKoor"
 			},
 			{
 				"suppressOutput": true,
@@ -275,11 +315,19 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DODatenlieferantID"
+				"titles": "DOAktualisierungsDatum"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DOKategorie"
+				"titles": "DODatenbis"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenvon"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORaeumlicheBeziehung"
 			},
 			{
 				"suppressOutput": true,
@@ -295,10 +343,6 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DOOGDLizenz"
-			},
-			{
-				"suppressOutput": true,
 				"titles": "DOOGDStatus"
 			},
 			{
@@ -307,11 +351,15 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DORaeumlicheBeziehung"
+				"titles": "DOuebergordneterDBID"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DORechtsgrundlagenID"
+				"titles": "DODatenlieferantID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODienstabteilungDOName"
 			},
 			{
 				"suppressOutput": true,
@@ -319,31 +367,7 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DOuebergordneterDBID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "StatusNummer"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "WFDOKoor"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DOAktualisierungsDatum"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DODatenbis"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DOMetadatenFreigabedatum"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DOuebergordneterDB"
+				"titles": "DOuebergeordneterDBName"
 			}
 		]
 	}

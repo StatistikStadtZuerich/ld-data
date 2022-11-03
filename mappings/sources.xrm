@@ -225,15 +225,12 @@ logical-source HDB_DATENOBJEKTE {
 		DODatenbezugLink1
 		DODatenbezugLink2
 		DODatenbezugLink3
-		DODatenelementID
-		DODatenvon
+		DODatenformat
+		DODatenformatID
 		DODatenzugang0
 		DODatenzugangID
-		DODienstabteilungID
 		DOGeschaeftsbereich
 		DOKategorieID
-		DOLaufnummer
-		DOMetadatenErfasserId
 		DOMetadatenFreigabeId
 		DOOGDBemerkungen
 		DOOGDFreigabeId
@@ -247,8 +244,9 @@ logical-source HDB_DATENOBJEKTE {
 		DOOGDPruefungID
 		DOOGDRechtsgrundlagen
 		DOOGDRechtsgrundlagenID
+		DOPersonendaten
+		DOPersonendatenID
 		DORaeumlicheBeziehungID
-		DORechtsgrundlagen
 		DORechtsgrundlagenBemerkungen
 		DORechtsgrundlagenLink1
 		DORechtsgrundlagenLink2
@@ -256,9 +254,6 @@ logical-source HDB_DATENOBJEKTE {
 		DORolleDatenKuratorId
 		DORolleDatenVerantwortlicherId
 		DORolletechnDatenmanagerId
-		DOSchluesselwoerterTermset
-		DOSchutzstufe
-		DOSchutzstufeID
 		DOVeroeffentlichung
 		DOVeroeffentlichungID
 		DOVertraulichkeit
@@ -266,34 +261,45 @@ logical-source HDB_DATENOBJEKTE {
 		DOVertraulichkeitID
 		DOVertraulichkeitsPruefdatum
 		DOWeitergabe
+		DOWeitergabeFilter
+		DOWeitergabeFilterID
 		DOWeitergabeID
-		StatusText
 		Title
 		DOAndereDienstabteilungEindeutig
+		DORechtsgrundlagenWeitergabeBeme
 		DOVertraulichkeitsPruefstelleId
-		DOAktualisierung
 		DOBeschreibung
+		DOAktualisierung
 		DOBeschreibungBemerkungen
-		DODatenlieferant
-		DODatenlieferantID
-		DODienstabteilung
+		DODatenelementID
 		DOKategorie
+		DOLaufnummer
+		DOMetadatenErfasserId
+		DOMetadatenFreigabedatum
+		DOOGDLizenz
+		DORechtsgrundlagen
+		DORechtsgrundlagenID
+		DOuebergordneterDB
+		StatusNummer
+		StatusText
+		WFDOKoor
+		DODatenlieferant
+		DOAktualisierungsDatum
+		DODatenbis
+		DODatenvon
+		DORaeumlicheBeziehung
+		DODienstabteilung
 		DOMDQuellsystem
 		DOMDQuellsystemID
 		DOName
-		DOOGDLizenz
 		DOOGDStatus
 		DOOGDStatusID
-		DORaeumlicheBeziehung
-		DORechtsgrundlagenID
-		DOSchluesselwoerter
 		DOuebergordneterDBID
-		StatusNummer
-		WFDOKoor
-		DOAktualisierungsDatum
-		DODatenbis
-		DOMetadatenFreigabedatum
-		DOuebergordneterDB
+		DODienstabteilungID
+		DODatenlieferantID
+		DODienstabteilungDOName
+		DOSchluesselwoerter
+		DOuebergeordneterDBName
 }
 
 logical-source HDB_DATENATTRIBUTE {
@@ -303,98 +309,47 @@ logical-source HDB_DATENATTRIBUTE {
 
 	referenceables
 		id
-		DAAktualisierung
-		DAAktualisierungDaten
-		DAAktualisierungID
-		DAAktualisierungsDatum
+		DAAndereDienstabteilung
+		DAAndereDienstabteilungID
+		DABeschreibung
 		DABeschreibungBemerkungen
 		DABeschreibungLink1
 		DABeschreibungLink2
 		DABeschreibungLink3
-		DADatenaustausch
-		DADatenaustauschID
-		DADatenbezugBemerkungen
-		DADatenbezugLink1
-		DADatenbezugLink2
-		DADatenbezugLink3
-		DADatenbis
-		DADatenelementIdentifikator
-		DADatenlieferant
-		DADatenlieferantID
-		DADatenvon
-		DADatenzugang
-		DADatenzugangID
-		DADienstabteilung
-		DADienstabteilungID
-		DAFachgesetz
-		DAFachgesetzBemerkungen
-		DAFachgesetzID
-		DAFachgesetzLink1
-		DAFachgesetzLink2
-		DAFachgesetzLink3
+		DADienstabteilungsFilter
+		DADienstabteilungsFilterID
+		DAFeldeinheit
+		DAFeldeinheitID
+		DAFeldtyp
+		DAFeldtypID
 		DAFeldwerteliste
-		DAGeschaeftsbereich
-		DAHerkunft
-		DAHerkunftBemerkungen
-		DAHerkunftID
-		DAIntegritaet
-		DAIntegritaetID
-		DAKategorie
-		DAKategorieID
-		DALaufnummer
+		DAFeldwertelisteID
 		DAMDQuellsystemIdentifikator
-		DAMetadatenErfasserId
-		DAMetadatenFreigabeId
-		DAMetadatenFreigabedatum
-		DANachvollziehbarkeit
-		DANachvollziehbarkeitID
-		DANutzungszweck
-		DAOGDBemerkungen
-		DAOGDFreigabeId
-		DAOGDFreigabedatum
-		DAOGDLizenz
-		DAOGDLizenzID
-		DAOGDMassnahmen
-		DAOGDMassnahmenID
-		DAOGDPrioritaet
-		DAOGDPrioritaetID
-		DAOGDPruefung
-		DAOGDPruefungID
-		DAOGDRechtsgrundlagen
-		DAOGDRechtsgrundlagenID
-		DAOGDStatus
-		DAOrganisationsrecht
-		DARolleDatenKuratorId
-		DARolleDatenVerantwortlicherId
-		DARolletechnDatenmanagerId
 		DASSZAuswertungsregel
+		DASSZFeldwerteliste
+		DASSZFeldwertelisteID
 		DASSZLevel
+		DASSZLevelID
 		DASSZParent
 		DASSZSort
-		DASchluesselwoerter
-		DASchluesselwoerter0
-		DASchluesselwoerterTermset
-		DAVerfuegbarkeit
-		DAVerfuegbarkeitID
-		DAVeroeffentlichung
-		DAVeroeffentlichungID
 		DAVertraulichkeit
-		DAVertraulichkeitBemerkungen
 		DAVertraulichkeitID
-		DAVertraulichkeitsPruefdatum
-		DAWeitergabe
-		DAWeitergabeID
-		StatusNummer
-		StatusText
+		DAuebergeordneterDBName
+		DAuebergeordneterDOName
 		Title
-		DAVertraulichkeitsPruefstelleId
-		DABeschreibung
-		WFDAKoor
-		DAMDQuellsystem
+		DAAndereDienstabteilungEindeutig
+		DADatenelementIdentifikator
 		DAName
 		DAtechFeldname
-		DAuebergordnetesDO
+		StatusNummer
+		WFDAKoor
+		DADienstabteilungID
+		DADienstabteilung
+		DALaufnummer
+		DAMDQuellsystem
 		DAuebergordnetesDOID
+		DAuebergordnetesDO
+		StatusText
 }
 
 logical-source HDB_RECHTSGRUNDLAGEN {

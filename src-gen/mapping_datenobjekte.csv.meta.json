@@ -141,7 +141,11 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DODatenelementID"
+				"titles": "DODatenformat"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenformatID"
 			},
 			{
 				"suppressOutput": true,
@@ -153,19 +157,11 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DODienstabteilungID"
-			},
-			{
-				"suppressOutput": true,
 				"titles": "DOGeschaeftsbereich"
 			},
 			{
 				"suppressOutput": true,
 				"titles": "DOKategorieID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DOLaufnummer"
 			},
 			{
 				"suppressOutput": true,
@@ -221,11 +217,15 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DORaeumlicheBeziehungID"
+				"titles": "DOPersonendaten"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DORechtsgrundlagen"
+				"titles": "DOPersonendatenID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORaeumlicheBeziehungID"
 			},
 			{
 				"suppressOutput": true,
@@ -257,18 +257,6 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DOSchluesselwoerterTermset"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DOSchutzstufe"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DOSchutzstufeID"
-			},
-			{
-				"suppressOutput": true,
 				"titles": "DOVeroeffentlichung"
 			},
 			{
@@ -297,11 +285,15 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DOWeitergabeID"
+				"titles": "DOWeitergabeFilter"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "StatusText"
+				"titles": "DOWeitergabeFilterID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOWeitergabeID"
 			},
 			{
 				"suppressOutput": true,
@@ -313,15 +305,47 @@
 			},
 			{
 				"suppressOutput": true,
+				"titles": "DORechtsgrundlagenWeitergabeBeme"
+			},
+			{
+				"suppressOutput": true,
 				"titles": "DOVertraulichkeitsPruefstelleId"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DODatenlieferant"
+				"titles": "DODatenelementID"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DODatenlieferantID"
+				"titles": "DOLaufnummer"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORechtsgrundlagen"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORechtsgrundlagenID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOuebergordneterDB"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "StatusNummer"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "StatusText"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "WFDOKoor"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenlieferant"
 			},
 			{
 				"suppressOutput": true,
@@ -341,23 +365,23 @@
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DORechtsgrundlagenID"
-			},
-			{
-				"suppressOutput": true,
 				"titles": "DOuebergordneterDBID"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "StatusNummer"
+				"titles": "DODienstabteilungID"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "WFDOKoor"
+				"titles": "DODatenlieferantID"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "DOuebergordneterDB"
+				"titles": "DODienstabteilungDOName"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOuebergeordneterDBName"
 			}
 		]
 	}

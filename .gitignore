@@ -9,3 +9,7 @@ node_modules
 .~*
 .eslintrc.yml
 src-gen/mapping_hdb.csv.meta.json
+input
+.env.*
+.project
+assets/cube/metadata.ttl

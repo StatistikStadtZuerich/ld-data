@@ -5,7 +5,8 @@
   "type": "module",
   "description": "Barnard pipeline with sensible defaults",
   "scripts": {
-    "postinstall": "mkdirp output input",
+    "preinstall": "mkdirp output input assets/cube",
+    "postinstall": "curl -H 'Accept: text/turtle' --data-urlencode query@sparql/temporary-cube-labels.rq $QUERYENDPOINT -o assets/cube/metadata.ttl",
     "fetch": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/fetch pipelines/fetch.ttl --variable=SSH_HOST --variable=SSH_PORT --variable=SSH_USER --variable=SSH_PRIVATE_KEY",
     "fetchDiff": "dotenv -e .env.defaults -e .env -- ./start.sh FetchDiff",
     "output:file": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/toFile pipelines/main.ttl",
@@ -13,7 +14,6 @@
     "output:store": "dotenv -e .env.defaults -e .env -- ./start.sh MainStore",
     "output:dimensions:store": "dotenv -e .env.defaults -e .env -- ./start.sh DimensionsStore",
     "output:observations:store": "dotenv -e .env.defaults -e .env -- ./start.sh ObservationsStore",
-    "output:dimensions:file": "mkdir -p output && barnard59 run -v --pipeline=urn:pipeline:xrm#DimensionsFile pipelines/main.ttl",
     "cubes-to-file": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/cubesToFile pipelines/main.ttl",
     "dimensions-to-file": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/dimensionsToFile pipelines/main.ttl",
     "test": "stricter-standard && c8 --reporter=lcov --reporter=text mocha"

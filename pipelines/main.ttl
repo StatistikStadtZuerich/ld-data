@@ -24,7 +24,7 @@
     p:value "https://ld.stadt-zuerich.ch/statistics/"
   ], [ a p:Variable;
     p:name "cubeMetadataFile";
-    p:value "assets/cubes.ttl"
+    p:value "assets/cube/metadata.ttl"
   ], [ a p:Variable;
     p:name "cubeOutputFile";
     p:value "output/cubes.nt"

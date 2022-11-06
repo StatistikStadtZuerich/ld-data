@@ -40,7 +40,10 @@
   ], [ a p:Variable;
     p:name "destinationGraph";
     p:value "https://lindas.admin.ch/stadtzuerich/stat"
-  ].
+  ], [ a p:Variable;
+    p:name "inputFilePattern";
+    p:value "assets/static/*.ttl"
+  ] .
 
 #
 # Combined Cubes & Dimensions pipeline & steps
@@ -82,6 +85,7 @@
     code:link <node:barnard59-base/concat.js#object>
   ];
   code:arguments (
+    <globTurtle> # static files from "assets" 
     <cubes>
     <dimensions>
   ).
@@ -126,15 +130,6 @@
       <cubes>
       <serialize>
       <writeCubeFile>
-    )
-  ].
-
-<static> a p:Pipeline, p:ReadableObjectMode;
-  p:variables <staticVars>;
-  p:steps [
-    p:stepList (
-      <readFile>
-      <parseN3>
     )
   ].
 
@@ -394,6 +389,51 @@
     code:name "maxQuadsPerRequest";
     code:value 10000000
   ].
+
+# Glob RDF (Turtle)
+
+<globTurtle> a p:Pipeline, p:ReadableObjectMode;
+  p:steps [
+    p:stepList (
+      <listTurtleFiles>
+      <forEachTurtleFile>
+    )
+  ].
+
+<listTurtleFiles> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-base/glob.js#default>
+  ];
+  code:arguments [
+    code:name "pattern";
+    code:value "inputFilePattern"^^p:VariableName
+  ].
+
+<forEachTurtleFile> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-base/forEach.js#default>
+  ];
+  code:arguments (<readTurtle> "filename").
+
+<readTurtle> a p:Pipeline, p:ReadableObjectMode;
+  p:steps [
+    p:stepList (
+      <readTurtleFile>
+      <parseTurtle>
+    )
+  ].
+
+<readTurtleFile> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:fs#createReadStream>
+  ];
+  code:arguments ("filename"^^p:VariableName).
+
+<parseTurtle> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-formats/n3.js#parse>
+  ];
+  code:arguments (<parseMetadata>).
 
   #
   # Statistik Stadt Zürich related steps

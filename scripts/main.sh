@@ -10,8 +10,7 @@ then
     unzip input/HDB_Full.zip -d input # should be part of pipeline
     npm run output:file
     npm run file:store
-    gzip output/output.nt 
-    #curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/cube-name-identifier.rq" $ENDPOINT/update
+    curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/sparql/shape-filter.rq" $ENDPOINT/update
     #./scripts/ssz-views.sh
     #echo "rename /upload/$SFTPENV/HDB_Full.zip /upload/$SFTPENV/done/HDB_Full.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
     set +eo pipefail
@@ -27,7 +26,6 @@ else
       npm run output:dimensions:store
       npm run output:observations:store
       curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/diff-delivery-update-active-graph.rq" $ENDPOINT/update
-      curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/cube-name-identifier.rq" $ENDPOINT/update
       ./scripts/ssz-views.sh
       echo "rename /upload/$SFTPENV/HDB_Diff.zip /upload/$SFTPENV/done/HDB_Diff.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
       set +eo pipefail

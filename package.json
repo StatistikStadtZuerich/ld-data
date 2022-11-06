@@ -1,9 +1,9 @@
 {
-  "name": "ssz-data",
+  "name": "ld-data",
   "version": "0.99.0",
   "private": true,
   "type": "module",
-  "description": "Barnard pipeline with sensible defaults",
+  "description": "Statistik Stadt Zürich barnard59 pipeline",
   "scripts": {
     "preinstall": "mkdirp output input assets/cube",
     "postinstall": "curl -H 'Accept: text/turtle' --data-urlencode query@sparql/temporary-cube-labels.rq $QUERYENDPOINT -o assets/cube/metadata.ttl",
@@ -11,9 +11,6 @@
     "fetchDiff": "dotenv -e .env.defaults -e .env -- ./start.sh FetchDiff",
     "output:file": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/toFile pipelines/main.ttl",
     "file:store": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/fileToStore pipelines/main.ttl --variable=ENDPOINT --variable=GRAPHSTORE_USERNAME --variable=GRAPHSTORE_PASSWORD",
-    "output:store": "dotenv -e .env.defaults -e .env -- ./start.sh MainStore",
-    "output:dimensions:store": "dotenv -e .env.defaults -e .env -- ./start.sh DimensionsStore",
-    "output:observations:store": "dotenv -e .env.defaults -e .env -- ./start.sh ObservationsStore",
     "cubes-to-file": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/cubesToFile pipelines/main.ttl",
     "dimensions-to-file": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/dimensionsToFile pipelines/main.ttl",
     "test": "stricter-standard && c8 --reporter=lcov --reporter=text mocha"

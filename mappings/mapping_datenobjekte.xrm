@@ -1,7 +1,7 @@
 output csvw
 
 map DATENOBJEKTE from HDB_DATENOBJEKTE {
-	subject template viewIri with id;
+	subject template metaObjectIri with id;
 
 	types
 		schema.Dataset

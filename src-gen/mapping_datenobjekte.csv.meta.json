@@ -6,7 +6,7 @@
 		"doubleQuote": true
 	},
 	"tableSchema": {
-		"aboutUrl": "https://ld.stadt-zuerich.ch/statistics/view/{id}",
+		"aboutUrl": "https://ld.stadt-zuerich.ch/statistics/meta/object/{id}",
 		"columns": [
 			{
 				"virtual": true,

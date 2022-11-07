@@ -10,7 +10,7 @@ then
     unzip input/HDB_Full.zip -d input # should be part of pipeline
     npm run output:file
     npm run file:store
-    curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/sparql/shape-filter.rq" $ENDPOINT/update
+    curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/shape-filter.rq" $ENDPOINT/update
     #./scripts/ssz-views.sh
     #echo "rename /upload/$SFTPENV/HDB_Full.zip /upload/$SFTPENV/done/HDB_Full.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
     set +eo pipefail

@@ -89,6 +89,21 @@ Im Falle eines Fehlers muss das Log der Pipeline genauer untersucht werden. Dara
 * Die Pipeline hat ein Problem während der Transformation: In diesem Fall muss die Logdatei individuell ausgewertet und interpretiert werden.
 * Die Pipeline kann die transformierten Daten nicht hochladen: In diesem Fall scheint ein Problem mit dem LINDAS SPARQL-Endpunkt vorzuliegen. Die Fehlermeldung muss entsprechend interpretiert werden.
 
+### Backup der Daten
+
+Die Daten können via HTTP komplett abgefragt werden. Damit kan jederzeit der volle Datenstamm zur Archivierung abgelegt werden. Die Abfrage läuft über das SPARQL Graph Store Protocol, welches eine einfache HTTP-Abfrage ist.
+
+Die erstellten Views sind einer nicht öffentlich lesbaren Datenbank mit dem Namen `ssz-views` abgelegt. Die eigentlichen Daten sind in einem separaten Graph in der öffentlichen `lindas` Datenbank. 
+
+Mit dem entsprechenden Passwort können die Daten wie folgt in eine Datei geschrieben werden:
+
+`curl -u ssz-views-read:PASSWORD -o views.nq -H "Accept: application/n-quads" https://stardog-int.cluster.ldbar.ch:443/ssz-views`
+
+`curl -u ssz-views-read:PASSWORD -o ssz-data.nt -H "Accept: application/n-triples" "https://stardog-int.cluster.ldbar.ch:443/lindas/?graph=https://lindas.admin.ch/stadtzuerich/stat"`
+
+Die Datei besteht aus N-Triples beziehungsweise N-Quads und kann sehr effektiv komprimiert werden.
+
+Für die PROD-Umgebung ist die URL mit `https://stardog.cluster.ldbar.ch` zu ersetzen.
 
 # License
 This program is licensed under [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause):

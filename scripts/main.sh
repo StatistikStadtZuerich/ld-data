@@ -11,7 +11,6 @@ then
     npm run output:file
     npm run file:store
     curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/shape-filter.rq" $ENDPOINT/update
-    #./scripts/ssz-views.sh
     #echo "rename /upload/$SFTPENV/HDB_Full.zip /upload/$SFTPENV/done/HDB_Full.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
     set +eo pipefail
 else
@@ -23,11 +22,11 @@ else
       set -eo pipefail
       echo "File HDB_Diff.zip exists, running diff pipeline"
       npm run fetchDiff
-      npm run output:dimensions:store
-      npm run output:observations:store
-      curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/diff-delivery-update-active-graph.rq" $ENDPOINT/update
-      ./scripts/ssz-views.sh
-      echo "rename /upload/$SFTPENV/HDB_Diff.zip /upload/$SFTPENV/done/HDB_Diff.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
+      unzip input/HDB_Full.zip -d input # should be part of pipeline
+      npm run output:file
+      npm run file:store:append
+      #curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/diff-delivery-update-active-graph.rq" $ENDPOINT/update
+      #echo "rename /upload/$SFTPENV/HDB_Diff.zip /upload/$SFTPENV/done/HDB_Diff.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
       set +eo pipefail
     else
       echo "File HDB_Diff.zip does not exist either, aborting..."

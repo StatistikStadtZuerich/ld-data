@@ -80,6 +80,17 @@
     )
   ].
 
+<fileToStoreAppend> a p:Pipeline;
+  p:variables <defaultVars>;
+  p:steps [
+    p:stepList (
+      <readFile>
+      <parseN3>
+      <setDestinationGraph>
+      <graphStorePost>
+    )
+  ].
+
 <cubesAndDimensionsTo> a p:Step;
   code:implementedBy [ a code:EcmaScriptModule;
     code:link <node:barnard59-base/concat.js#object>
@@ -375,6 +386,24 @@
 <graphStorePut> a p:Step;
   code:implementedBy [ a code:EcmaScriptModule;
     code:link <node:barnard59-graph-store/put.js#default>
+  ];
+  code:arguments [
+    code:name "endpoint";
+    code:value "ENDPOINT"^^p:VariableName
+  ], [
+    code:name "user";
+    code:value "GRAPHSTORE_USERNAME"^^p:VariableName
+  ], [
+    code:name "password";
+    code:value "GRAPHSTORE_PASSWORD"^^p:VariableName
+  ], [
+    code:name "maxQuadsPerRequest";
+    code:value 10000000
+  ].
+
+<graphStorePost> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-graph-store/post.js#default>
   ];
   code:arguments [
     code:name "endpoint";

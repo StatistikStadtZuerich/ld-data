@@ -11,6 +11,7 @@
     "fetchDiff": "dotenv -e .env.defaults -e .env -- ./start.sh FetchDiff",
     "output:file": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/toFile pipelines/main.ttl",
     "file:store": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/fileToStore pipelines/main.ttl --variable=ENDPOINT --variable=GRAPHSTORE_USERNAME --variable=GRAPHSTORE_PASSWORD",
+    "file:store:append": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/fileToStoreAppend pipelines/main.ttl --variable=ENDPOINT --variable=GRAPHSTORE_USERNAME --variable=GRAPHSTORE_PASSWORD",
     "cubes-to-file": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/cubesToFile pipelines/main.ttl",
     "dimensions-to-file": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/dimensionsToFile pipelines/main.ttl",
     "test": "stricter-standard && c8 --reporter=lcov --reporter=text mocha"

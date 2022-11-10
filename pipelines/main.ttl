@@ -36,7 +36,7 @@
     p:value "observation/*.json"
   ], [ a p:Variable;
     p:name "dimensionCsvMappingFilePattern";
-    p:value "src-gen/mapping_!(hdb|datenattribute).csv.meta.json"
+    p:value "src-gen/mapping_!(hdb).csv.meta.json"
   ], [ a p:Variable;
     p:name "destinationGraph";
     p:value "https://lindas.admin.ch/stadtzuerich/stat"

@@ -15,7 +15,8 @@
 			},
 			{
 				"propertyUrl": "https://ld.stadt-zuerich.ch/schema/dataObject",
-				"titles": "DAuebergordnetesDOID"
+				"titles": "DAuebergordnetesDOID",
+				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/meta/object/{DAuebergordnetesDOID}"
 			},
 			{
 				"propertyUrl": "http://schema.org/name",
@@ -172,6 +173,10 @@
 			{
 				"suppressOutput": true,
 				"titles": "DAMDQuellsystem"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAuebergordnetesDOID"
 			},
 			{
 				"suppressOutput": true,

@@ -7,7 +7,7 @@ map DATENATTRIBUTE from HDB_DATENATTRIBUTE {
 		ssz.Attribute
 
   properties
-    ssz.dataObject from DAuebergordnetesDOID;
+    ssz.dataObject template metaObjectIri with DAuebergordnetesDOID;
 	schema.name from DAName;
     schema.alternateName from DAtechFeldname;
 	schema.description from DABeschreibung;

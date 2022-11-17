@@ -1,0 +1,374 @@
+{
+	"@context": "http://www.w3.org/ns/csvw",
+	"url": "file:input/HDB_DATENOBJEKTE.csv",
+	"dialect": {
+		"delimiter": ",",
+		"doubleQuote": true
+	},
+	"tableSchema": {
+		"aboutUrl": "https://ld.stadt-zuerich.ch/statistics/meta/org/{DODatenlieferantID}",
+		"columns": [
+			{
+				"virtual": true,
+				"propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+				"valueUrl": "http://schema.org/Organization"
+			},
+			{
+				"propertyUrl": "http://schema.org/identifier",
+				"titles": "DODatenlieferantID"
+			},
+			{
+				"propertyUrl": "http://schema.org/name",
+				"titles": "DODatenlieferant"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "id"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOAktualisierungID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOAndereDienstabteilung"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOAndereDienstabteilungID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOBeschreibungLink1"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOBeschreibungLink2"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOBeschreibungLink3"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenaustausch"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenaustauschID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenbearbeitungszweck"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenbezugBemerkungen"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenbezugLink1"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenbezugLink2"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenbezugLink3"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenformat"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenformatID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenzugang0"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenzugangID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOGeschaeftsbereich"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOKategorieID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOMetadatenFreigabeId"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDBemerkungen"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDFreigabeId"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDFreigabedatum"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDLizenzID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDMassnahmen"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDMassnahmenID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDPrioritaet"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDPrioritaetID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDPruefung"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDPruefungID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDRechtsgrundlagen"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDRechtsgrundlagenID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOPersonendaten"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOPersonendatenID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORaeumlicheBeziehungID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORechtsgrundlagenBemerkungen"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORechtsgrundlagenLink1"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORechtsgrundlagenLink2"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORechtsgrundlagenLink3"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORolleDatenKuratorId"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORolleDatenVerantwortlicherId"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORolletechnDatenmanagerId"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOVeroeffentlichung"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOVeroeffentlichungID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOVertraulichkeit"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOVertraulichkeitBemerkungen"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOVertraulichkeitID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOVertraulichkeitsPruefdatum"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOWeitergabe"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOWeitergabeFilter"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOWeitergabeFilterID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOWeitergabeID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "Title"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOAndereDienstabteilungEindeutig"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORechtsgrundlagenWeitergabeBeme"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOVertraulichkeitsPruefstelleId"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOBeschreibung"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOAktualisierung"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOBeschreibungBemerkungen"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenelementID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOKategorie"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOLaufnummer"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOMetadatenErfasserId"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOMetadatenFreigabedatum"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDLizenz"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORechtsgrundlagen"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORechtsgrundlagenID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOuebergordneterDB"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "StatusNummer"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "StatusText"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "WFDOKoor"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOAktualisierungsDatum"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenbis"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODatenvon"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DORaeumlicheBeziehung"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODienstabteilung"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOMDQuellsystem"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOMDQuellsystemID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOName"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDStatus"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOOGDStatusID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOuebergordneterDBID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODienstabteilungID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DODienstabteilungDOName"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOSchluesselwoerter"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DOuebergeordneterDBName"
+			}
+		]
+	}
+}

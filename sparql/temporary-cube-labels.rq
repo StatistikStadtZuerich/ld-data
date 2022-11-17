@@ -1,0 +1,36 @@
+BASE  <https://ld.stadt-zuerich.ch/statistics/> 
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cube: <https://cube.link/> 
+
+CONSTRUCT {
+  
+  ?cube a cube:Cube ;
+  	cube:observationConstraint  <sugus> .
+  
+  <sugus> a sh:NodeShape, cube:Constraint ;
+    sh:property [
+      sh:path ?dimension ;
+      schema:name ?dimensionName 
+  ]
+    
+}
+FROM <https://lindas.admin.ch/stadtzuerich/stat>
+WHERE {
+  {
+    ?cube a cube:Cube .
+  }
+  
+  UNION
+  { 
+  
+  ?dimension a rdf:Property ;
+     schema:name ?dimensionName .
+  }
+
+    
+}
+#LIMIT 10

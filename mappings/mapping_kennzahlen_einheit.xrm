@@ -1,6 +1,6 @@
 output csvw
 
-map KENNZAHLEN from HDB_KENZAHLEN {
+map KENNZAHLEN_EINHEIT from HDB_KENZAHLEN {
 	subject template unitIri with Einheit_URI;
 
 	types
@@ -9,7 +9,6 @@ map KENNZAHLEN from HDB_KENZAHLEN {
 	properties
 		schema.name from Einheit;
 		schema.identifier from Einheit_Kurz;
-		qudt.unit template unitIri with Einheit_URI;
 		// TODO that depends on the use so we can't assign that directly
 		// ssz.rounding from Rundung;
 }

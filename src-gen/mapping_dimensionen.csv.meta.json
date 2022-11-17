@@ -1,80 +1,79 @@
 {
 	"@context": "http://www.w3.org/ns/csvw",
-	"url": "../input/HDB_DIMENSIONEN.csv",
+	"url": "file:input/HDB_DIMENSIONEN.csv",
 	"dialect": {
-		"delimiter": ","
-		,"doubleQuote": true
+		"delimiter": ",",
+		"doubleQuote": true
 	},
 	"tableSchema": {
-		"aboutUrl": "https://ld.stadt-zuerich.ch/statistics/property/{Gruppe}",
+		"aboutUrl": "https://ld.stadt-zuerich.ch/statistics/property/{Dimension}",
 		"columns": [
 			{
 				"virtual": true,
 				"propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
 				"valueUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-			}
-			,
+			},
+			{
+				"virtual": true,
+				"propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+				"valueUrl": "https://cube.link/KeyDimension"
+			},
 			{
 				"propertyUrl": "http://schema.org/name",
-				"titles": "Gruppenname"
+				"titles": "Dimensionname"
 			},
 			{
 				"propertyUrl": "http://schema.org/identifier",
-				"titles": "Gruppe"
-			}
-			,
+				"titles": "Dimension"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "PARENTCODE"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "PARENTCODENAME"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "GLOSSARID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "LINK"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "BESCHREIBUNG"
+			},
 			{
 				"suppressOutput": true,
 				"titles": "Index"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "Gruppencode"
+				"titles": "Dimensioncode"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "Gruppencodename"
+				"titles": "Dimensioncodename"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "Gruppencodesort"
+				"titles": "Dimensioncodesort"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "Parentcode"
+				"titles": "DimensionOrigin"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "Parentcodename"
+				"titles": "DimensionOriginCode"
 			},
 			{
 				"suppressOutput": true,
-				"titles": "GlossarID"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "Link"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "Beschreibung"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "Bemerkung"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "Hierarchie"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DWH_Name"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "DWH_Code"
+				"titles": "Dimensionfilter"
 			}
-		] 
+		]
 	}
 }

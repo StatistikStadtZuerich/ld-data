@@ -1,0 +1,34 @@
+PREFIX  schema: <http://schema.org/>
+PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX  cube: <https://cube.link/>
+PREFIX  sh:   <http://www.w3.org/ns/shacl#>
+PREFIX  rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+INSERT {
+  GRAPH <https://lindas.admin.ch/stadtzuerich/stat> {
+    ?bnode_property <https://ld.stadt-zuerich.ch/schema/hasFilter> ?termSet .
+  }
+}
+WHERE
+  { { SELECT DISTINCT  ?bnode_property ?termSet
+      WHERE
+        { 
+          ?cube a cube:Cube ;
+            cube:observationConstraint ?cubeShape .
+
+          ?cubeShape a cube:Constraint ;
+            sh:property ?bnode_property .
+          
+          ?bnode_property (sh:in/(rdf:rest)*)/rdf:first ?instances .
+
+          ?bnode_property sh:path ?dimension .
+          
+          ?dimension a cube:KeyDimension .
+          
+          ?termSet a schema:DefinedTermSet ;
+            schema:hasDefinedTerm ?instances
+          
+          FILTER ( ?termSet != <https://ld.stadt-zuerich.ch/statistics/termset/> )
+        }
+    }
+  }

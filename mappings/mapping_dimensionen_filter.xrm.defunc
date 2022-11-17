@@ -1,0 +1,14 @@
+output csvw
+
+map DIMENSIONEN_FILTER from HDB_DIMENSIONEN {
+	subject template termsetIri with Dimensionfilter; // TODO this will surely break, horrible identifiers in here
+
+	types
+		schema.DefinedTermSet
+
+	properties
+		schema.name from Dimensionfilter;
+    schema.identifier from Dimensionfilter;
+		schema.hasDefinedTerm template termIri with Dimensioncode;
+    ssz.filterOf template propertyIri with Dimension;
+}

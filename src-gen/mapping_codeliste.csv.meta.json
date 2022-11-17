@@ -1,46 +1,39 @@
 {
 	"@context": "http://www.w3.org/ns/csvw",
-	"url": "../input/HDB_CODELISTE.csv",
+	"url": "file:input/HDB_CODELISTE.csv",
 	"dialect": {
-		"delimiter": ","
-		,"doubleQuote": true
+		"delimiter": ",",
+		"doubleQuote": true
 	},
 	"tableSchema": {
-		"aboutUrl": "https://ld.stadt-zuerich.ch/statistics/code/{Code}",
+		"aboutUrl": "https://ld.stadt-zuerich.ch/statistics/code/{CODE}",
 		"columns": [
 			{
 				"virtual": true,
 				"propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-				"valueUrl": "http://www.w3.org/2004/02/skos/core#Concept"
-			},
-			{
-				"virtual": true,
-				"propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
 				"valueUrl": "http://schema.org/DefinedTerm"
-			}
-			,
+			},
 			{
 				"propertyUrl": "http://schema.org/name",
-				"titles": "Codename"
+				"titles": "CODENAME"
 			},
 			{
-				"propertyUrl": "http://schema.org/identifier",
-				"titles": "Code"
+				"propertyUrl": "http://schema.org/termCode",
+				"titles": "CODE"
 			},
 			{
-				"propertyUrl": "http://www.w3.org/2004/02/skos/core#inScheme",
-				"titles": "Referenztabelle",
-				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/scheme/{Referenztabelle}"
-			}
-			,
+				"propertyUrl": "http://schema.org/inDefinedTermSet",
+				"titles": "REFERENZTABELLE",
+				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/termset/{REFERENZTABELLE}"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "REFERENZTABELLE"
+			},
 			{
 				"suppressOutput": true,
 				"titles": "Index"
-			},
-			{
-				"suppressOutput": true,
-				"titles": "Referenztabelle"
 			}
-		] 
+		]
 	}
 }

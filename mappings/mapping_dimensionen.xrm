@@ -1,12 +1,15 @@
 output csvw
 
+// Note that these are just the properties used in the cube
+
 map DIMENSIONEN from HDB_DIMENSIONEN {
-	subject template propertyIri with Gruppe;
+	subject template propertyIri with Dimension;
 
 	types
 		rdf.Property
+    cube.KeyDimension
 
 	properties
-		schema.name from Gruppenname;
-		schema.identifier from Gruppe;
+		schema.name from Dimensionname;
+		schema.identifier from Dimension;
 }

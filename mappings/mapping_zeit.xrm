@@ -1,14 +1,15 @@
 output csvw
 
-map RAUM from HDB_ZEIT {
-	subject template codeIri with ZEIT;
+map ZEIT from HDB_ZEIT {
+	subject template termIri with ZEIT;
 
 	types
 		time.TemporalEntity
-		skos.Concept
+    schema.DefinedTerm
 
 	properties
 		schema.name from ZEIT;
+    schema.termCode from ZEIT;
 		ssz.hasEnd from STICHTAGDATUM with datatype xsd.date;
 		ssz.hasEnd from PERIODEENDE with datatype xsd.date;
 		ssz.hasBeginning from PERIODESTART with datatype xsd.date;

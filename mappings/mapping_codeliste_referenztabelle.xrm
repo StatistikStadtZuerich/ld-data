@@ -1,0 +1,13 @@
+output csvw
+
+map CODELISTE_REFERENZTABELLE from HDB_CODELISTE {
+	subject template termsetIri with REFERENZTABELLE;
+
+	types
+		schema.DefinedTermSet
+
+	properties
+		schema.name from REFERENZTABELLE;
+		schema.identifier from REFERENZTABELLE;
+		schema.hasDefinedTerm template termIri with CODE;
+}

@@ -1,15 +1,14 @@
 output csvw
 
 map CODELISTE from HDB_CODELISTE {
-	subject template codeIri with Code;
+	subject template termIri with CODE;
 
 	types
-		skos.Concept
 		schema.DefinedTerm
 
 	properties
-		schema.name from Codename;
-		schema.identifier from Code;
-		skos.inScheme template schemeIri with Referenztabelle;
+		schema.name from CODENAME;
+		schema.termCode from CODE; // TODO XXX needs to be filtered away
+		schema.inDefinedTermSet template termsetIri with REFERENZTABELLE;
 		// TODO check that ConceptScheme exists but what exactly is Referenztabelle?
 }

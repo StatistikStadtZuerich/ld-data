@@ -1,0 +1,191 @@
+{
+	"@context": "http://www.w3.org/ns/csvw",
+	"url": "file:input/HDB_DATENATTRIBUTE.csv",
+	"dialect": {
+		"delimiter": ",",
+		"doubleQuote": true
+	},
+	"tableSchema": {
+		"aboutUrl": "https://ld.stadt-zuerich.ch/statistics/meta/attribute/{id}",
+		"columns": [
+			{
+				"virtual": true,
+				"propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+				"valueUrl": "https://ld.stadt-zuerich.ch/schema/Attribute"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/schema/dataObject",
+				"titles": "DAuebergordnetesDOID",
+				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/meta/object/{DAuebergordnetesDOID}"
+			},
+			{
+				"propertyUrl": "http://schema.org/name",
+				"titles": "DAName"
+			},
+			{
+				"propertyUrl": "http://schema.org/alternateName",
+				"titles": "DAtechFeldname"
+			},
+			{
+				"propertyUrl": "http://schema.org/description",
+				"titles": "DABeschreibung"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/schema/dataType",
+				"titles": "DAFeldtyp"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/schema/dataUnit",
+				"titles": "DAFeldeinheit"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/schema/valueList",
+				"titles": "DAFeldwerteliste"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "id"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAAndereDienstabteilung"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAAndereDienstabteilungID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DABeschreibungBemerkungen"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DABeschreibungLink1"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DABeschreibungLink2"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DABeschreibungLink3"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DADienstabteilungsFilter"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DADienstabteilungsFilterID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAFeldeinheitID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAFeldtypID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAFeldwertelisteID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAMDQuellsystemIdentifikator"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DASSZAuswertungsregel"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DASSZFeldwerteliste"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DASSZFeldwertelisteID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DASSZLevel"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DASSZLevelID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DASSZParent"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DASSZSort"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAVertraulichkeit"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAVertraulichkeitID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAuebergeordneterDBName"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAuebergeordneterDOName"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "Title"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAAndereDienstabteilungEindeutig"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DADatenelementIdentifikator"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "StatusNummer"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "WFDAKoor"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DADienstabteilungID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DADienstabteilung"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DALaufnummer"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAMDQuellsystem"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAuebergordnetesDOID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DAuebergordnetesDO"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "StatusText"
+			}
+		]
+	}
+}

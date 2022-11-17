@@ -1,0 +1,328 @@
+@base <http://ssz.lindas.ch/pipeline/>.
+@prefix p: <https://pipeline.described.at/>.
+@prefix code: <https://code.described.at/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+<defaultVars>
+  p:variable [ a p:Variable;
+    p:name "outputFile";
+    p:value "output/streaming-sink.nt"
+  ], [ a p:Variable;
+    p:name "inputFile";
+    p:value "input/HDB.csv"
+#    p:value "output/streaming-source.nt"
+  ], [ a p:Variable;
+    p:name "metadata";
+    p:value "observation/hdb.csv-metadata.json"
+  ], [ a p:Variable;
+    p:name "csvw";
+    p:value "observation/hdb.csv-metadata.json"
+  ], [ a p:Variable;
+    p:name "csvMapping";
+    p:value "observation/hdb.csv-metadata.json"
+  ].
+
+<csvToFile> a p:Pipeline;
+  p:variables <defaultVars>;
+  p:steps [
+    p:stepList (
+      <readFile>
+      <parseCsv>
+      <serialize>
+      <writeFile>
+    )
+  ].
+
+<fileToFile> a p:Pipeline;
+  p:variables <defaultVars>;
+  p:steps [
+    p:stepList (
+      <readFile>
+      <parseN3>
+      <serialize>
+      <writeFile>
+    )
+  ].
+
+<readFile> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:fs#createReadStream>
+  ];
+  code:arguments ("inputFile"^^p:VariableName).
+
+<parseN3> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-formats/n3.js#parse>
+  ].
+
+<writeFile> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:fs#createWriteStream>
+  ];
+  code:arguments ("outputFile"^^p:VariableName).
+
+
+
+#
+# Common Subpipelines & Steps
+#
+<readCsv> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-csvw#fetch>
+  ];
+  code:arguments [
+    code:name "csvw";
+    code:value "observation/hdb.csv-metadata.json"
+  ].
+
+<parseCsv> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-formats/csvw.js#parse>
+  ];
+  code:arguments [
+    code:name "metadata";
+    code:value <parseMetadata>
+  ].
+
+<removeCsvwTriples> a p:Step ;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-base/filter.js#default>
+  ];
+  code:arguments ([ a code:EcmaScriptModule;
+    code:link <file:../lib/isNotCsvwTriple.js#default>
+  ]).
+
+<removeNullValues> a p:Step ;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-base/filter.js#default>
+  ];
+  code:arguments ([ a code:EcmaScriptModule;
+    code:link <file:../lib/steps-filter.js#removeNullValues>
+  ]).
+
+<removeEmptyCode> a p:Step ;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-base/filter.js#default>
+  ];
+  code:arguments ([ a code:EcmaScriptModule;
+    code:link <file:../lib/steps-filter.js#removeEmptyCode>
+  ]).
+
+<toDataset> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:rdf-stream-to-dataset-stream/bySubject.js#default>
+  ].
+
+<toObservation> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-rdf/cube.js#toObservation>
+  ];
+  code:arguments [
+    code:name "observer";
+    code:value "observer"^^p:VariableName
+  ].
+
+<buildCubeShape> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-rdf/cube.js#buildCubeShape>
+  ];
+  code:arguments [
+    code:name "metadata";
+    code:value <parseCubeMetadata>
+  ].
+
+<flatten> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-base/flatten.js#default>;
+  ].
+
+<serialize> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-formats/ntriples.js#serialize>
+  ].
+
+<parseCubeMetadata> a p:Pipeline, p:ReadableObjectMode;
+  p:steps [
+    p:stepList (
+      <readCubeMetadataFile>
+      <parseCubeMetadataTurtle>
+    )
+  ].
+
+<readCubeMetadataFile> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:fs#createReadStream>
+  ];
+  code:arguments ("cubeMetadataFile"^^p:VariableName).
+
+<parseCubeMetadataTurtle> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-formats/n3.js#parse>
+  ].
+
+<parseMetadata> a p:Pipeline, p:ReadableObjectMode;
+  p:steps [
+    p:stepList (
+      <readMetadataJson>
+      <parseMetadataJson>
+    )
+  ].
+
+<readMetadataJson> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:fs#createReadStream>
+  ];
+  code:arguments ("csvMapping"^^p:VariableName).
+
+<parseMetadataJson> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-formats/jsonld.js#parse>
+  ].
+
+<setDestinationGraph> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-rdf/setGraph.js#default>
+  ];
+  code:arguments ("destinationGraph"^^p:VariableName).
+
+<graphStorePut> a p:Step;
+  code:implementedBy [ a code:EcmaScriptModule;
+    code:link <node:barnard59-graph-store/put.js#default>
+  ];
+  code:arguments [
+    code:name "endpoint";
+    code:value "ENDPOINT_URL"^^p:VariableName
+  ], [
+    code:name "user";
+    code:value "ENDPOINT_USER"^^p:VariableName
+  ], [
+    code:name "password";
+    code:value "ENDPOINT_PASSWORD"^^p:VariableName
+  ], [
+    code:name "maxQuadsPerRequest";
+    code:value 10000000
+  ].
+
+  #
+  # Statistik Stadt Zürich related steps
+  #
+
+<filterAll> a p:Step ;
+	code:implementedBy [
+		rdf:type code:EcmaScriptModule ;
+		code:link <node:barnard59-base#filter> ;
+	] ;
+	code:arguments (
+		[
+			rdf:type code:EcmaScriptModule ;
+			code:link <file:../lib/steps-filter.js#all> ;
+		]
+	) .
+
+<mapAll> a p:Step ;
+	code:implementedBy [
+		rdf:type code:EcmaScriptModule ;
+		code:link <node:barnard59-base#map> ;
+	] ;
+	code:arguments (
+		[
+			rdf:type code:EcmaScriptModule ;
+			code:link <file:../lib/steps-map.js#all> ;
+		]
+	) .
+
+<referenceTimeToIri> a p:Step ;
+	code:implementedBy [
+		rdf:type code:EcmaScriptModule ;
+		code:link <node:barnard59-base#map> ;
+	] ;
+	code:arguments (
+		[
+			rdf:type code:EcmaScriptModule ;
+			code:link <file:../lib/steps-map.js#createZeitDefinedTermSet> ;
+		]
+	) .
+
+<removeXxx> a p:Step ;
+	code:implementedBy [
+		rdf:type code:EcmaScriptModule ;
+		code:link <node:barnard59-base#map> ;
+	] ;
+	code:arguments (
+		[
+			rdf:type code:EcmaScriptModule ;
+			code:link <file:../lib/steps-map.js#removeXxx> ;
+		]
+	) .
+
+<createDimensionDefinedTermSet> a p:Step ;
+	code:implementedBy [
+		rdf:type code:EcmaScriptModule ;
+		code:link <node:barnard59-base#map> ;
+	] ;
+	code:arguments (
+		[
+			rdf:type code:EcmaScriptModule ;
+			code:link <file:../lib/steps-map.js#createDimensionDefinedTermSet> ;
+		]
+	) .
+
+<createRaumDefinedTermSet> a p:Step ;
+	code:implementedBy [
+		rdf:type code:EcmaScriptModule ;
+		code:link <node:barnard59-base#map> ;
+	] ;
+	code:arguments (
+		[
+			rdf:type code:EcmaScriptModule ;
+			code:link <file:../lib/steps-map.js#createRaumDefinedTermSet> ;
+		]
+	) .
+
+<createRaumHierarchie> a p:Step ;
+	code:implementedBy [
+		rdf:type code:EcmaScriptModule ;
+		code:link <node:barnard59-base#map> ;
+	] ;
+	code:arguments (
+		[
+			rdf:type code:EcmaScriptModule ;
+			code:link <file:../lib/steps-map.js#createRaumHierarchie> ;
+		]
+	) .
+
+<sameAsIri> a p:Step ;
+	code:implementedBy [
+		rdf:type code:EcmaScriptModule ;
+		code:link <node:barnard59-base#map> ;
+	] ;
+	code:arguments (
+		[
+			rdf:type code:EcmaScriptModule ;
+			code:link <file:../lib/steps-map.js#sameAsIri> ;
+		]
+	) .
+
+<toISODate> a p:Step ;
+	code:implementedBy [
+		rdf:type code:EcmaScriptModule ;
+		code:link <node:barnard59-base#map> ;
+	] ;
+	code:arguments (
+		[
+			rdf:type code:EcmaScriptModule ;
+			code:link <file:../lib/steps-map.js#toISODate> ;
+		]
+	) .
+
+<toNumber> a p:Step ;
+	code:implementedBy [
+		rdf:type code:EcmaScriptModule ;
+		code:link <node:barnard59-base#map> ;
+	] ;
+	code:arguments (
+		[
+			rdf:type code:EcmaScriptModule ;
+			code:link <file:../lib/steps-map.js#toNumber> ;
+		]
+	) .

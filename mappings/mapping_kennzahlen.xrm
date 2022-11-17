@@ -5,11 +5,13 @@ map KENNZAHLEN from HDB_KENZAHLEN {
 
 	types
 		rdf.Property
+    cube.MeasureDimension
 
 	properties
 		schema.name from Kennzahlname;
 		schema.identifier from KennzahlCode;
 		qudt.unit template unitIri with Einheit_URI;
 		schema.description from Beschreibung;
-		skos.scopeNote from Methode;
+		schema.disambiguatingDescription from Methode;
+    example.GLOSSARID from GlossarID;
 }

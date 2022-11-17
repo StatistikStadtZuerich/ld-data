@@ -1,21 +1,20 @@
 output csvw
 
 map RAUM from HDB_RAUM {
-	subject template codeIri with Raum;
+	subject template termIri with Raum;
 
 	types
-		skos.Concept
 		schema.Place
+    schema.DefinedTerm
 
 	properties
 		schema.name from RaumLang with language-tag de;
-		skos.inScheme template schemeIri with Raumebene;
 		schema.position from RaumSort with datatype xsd.integer;
 		schema.description from Beschreibung;
-//		schema.sameAs from WikidataURI as IRI ; // need to see how CSVW does it
+    schema.disambiguatingDescription from GueltigkeitsbereicheID;
 		schema.sameAs from WikidataURI;
-		schema.identifier from Raum;
-		// schema.hasPart from RaumebeneParent ;
-// example.RaumebeneParent from RaumebeneParent ;
-		example.hierarchie from RaumHierarchie;
+		schema.termCode from Raum;
+    // TODO I thought that's unique per Raum but it seems not. See R01400 for example. Disabled for now
+    //schema.identifier from RaumCodeAktuell with datatype xsd.integer; // there are more codes, not sure what to do with those
+    example.raumfilter from RaumFilter; // post-processed for DefinedTermSet 
 }

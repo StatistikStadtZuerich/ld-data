@@ -1,12 +1,13 @@
-image: node:15-buster
+default:
+  image: docker.io/library/node:18
 
 before_script:
   - mkdir -p ~/.ssh && echo -e "${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa && chmod og-rwx ~/.ssh/id_rsa
 #  - echo "$SSH_PRIVATE_KEY" | ssh-add - > /dev/null
   - mkdir -p ~/.ssh && touch ~/.ssh/known_hosts
   - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
-  - npm install --unsafe-perm
-  - git clone https://github.com/zazuko/ssz-views.git && cd ssz-views && npm install
+  - npm ci
+#  - git clone https://github.com/zazuko/ssz-views.git && cd ssz-views && npm install
   - cd $CI_PROJECT_DIR
 
 cache:
@@ -36,15 +37,23 @@ pipeline_int:
     name: INT
   script:
     - ./scripts/main.sh
+#  artifacts:
+#    paths:
+#      - output/output.nt.gz
+#    expire_in: 1 day
 
-pipeline_test:
-  only:
+#pipeline_test:
+#  only:
 #    - develop
-    variables:
-      - $RELEASE == "zazuko"
-  tags:
-    - medium
-  environment:
-    name: TEST
-  script:
-      - ./scripts/main.sh
+#    variables:
+    #  - $RELEASE == "zazuko"
+#  tags:
+#    - medium
+#  environment:
+#    name: TEST
+#  script:
+#    - ./scripts/main.sh
+#  artifacts:
+#    paths:
+#      - output/output.nt
+#    expire_in: 1 day

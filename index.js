@@ -1,5 +1,5 @@
-const p = require('barnard59')
 const path = require('path')
+const p = require('barnard59')
 const program = require('commander')
 
 function convertCsvw (filename, metadata) {
@@ -11,20 +11,20 @@ function convertCsvw (filename, metadata) {
   const qbDataSet = new Map()
   const dataset = p.rdf.dataset()
 
-  return p.rdf.dataset().import(p.file.read(filenameMetadata).pipe(p.jsonld.parse())).then((metadata) => {
+  return p.rdf.dataset().import(p.file.read(filenameMetadata).pipe(p.jsonld.parse())).then(metadata => {
     return p.run(p.file.read(filenameInput)
       .pipe(p.csvw.parse({
         baseIRI: 'file://' + filename,
         metadata: metadata
       }))
-      .pipe(p.filter((quad) => {
+      .pipe(p.filter(quad => {
         return quad.predicate.value !== 'https://ld.stadt-zuerich.ch/statistics/property/XXX'
       }))
-      .pipe(p.filter((quad) => {
+      .pipe(p.filter(quad => {
         // does not do anything for some reason
         return quad.object.value && quad.object.value.toString().trim()
       }))
-      .pipe(p.map((quad) => {
+      .pipe(p.map(quad => {
         let subject = quad.subject
         let predicate = quad.predicate
         let object = quad.object
@@ -67,7 +67,7 @@ function convertCsvw (filename, metadata) {
 
         if (predicate.value === 'http://example.org/UPDATE') {
           const conditions = ['QUE', 'KZE', 'WRT']
-          var included = conditions.some(el => object.value.includes(el))
+          const included = conditions.some(el => object.value.includes(el))
           predicate = p.rdf.namedNode('https://ld.stadt-zuerich.ch/statistics/attribute/KORREKTUR')
 
           if (included) {
@@ -96,14 +96,14 @@ function convertCsvw (filename, metadata) {
       .pipe(p.ntriples.serialize())
       .pipe(p.file.write(filenameOutput)))
   }).then(() => {
-    for (var [key, value] of qbDataSet.entries()) {
+    for (const [key, value] of qbDataSet.entries()) {
       const datasetNode = p.rdf.namedNode(key)
       const dsdNode = p.rdf.namedNode(key + '#structure')
       const sliceKeyNode = p.rdf.namedNode(key + '/sliceKey')
       const sliceNode = p.rdf.namedNode(key + '/slice')
       const componentNode = p.rdf.blankNode()
       const datasetNotation = key.slice('https://ld.stadt-zuerich.ch/statistics/dataset/'.length)
-      const dataSetApiNode = p.rdf.namedNode('https://stat.stadt-zuerich.ch/dataset/' + datasetNotation)
+      // const dataSetApiNode = p.rdf.namedNode('https://stat.stadt-zuerich.ch/dataset/' + datasetNotation)
 
       dataset.add(p.rdf.quad(datasetNode, p.rdf.namedNode('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'), p.rdf.namedNode('http://purl.org/linked-data/cube#DataSet')))
       dataset.add(p.rdf.quad(datasetNode, p.rdf.namedNode('http://www.w3.org/2004/02/skos/core#notation'), p.rdf.literal(datasetNotation)))
@@ -127,7 +127,7 @@ function convertCsvw (filename, metadata) {
       dataset.add(p.rdf.quad(componentNode, p.rdf.namedNode('http://purl.org/linked-data/cube#attribute'), p.rdf.namedNode('https://ld.stadt-zuerich.ch/statistics/attribute/ERWARTETE_AKTUALISIERUNG')))
       dataset.add(p.rdf.quad(componentNode, p.rdf.namedNode('http://purl.org/linked-data/cube#attribute'), p.rdf.namedNode('https://ld.stadt-zuerich.ch/statistics/attribute/KORREKTUR')))
 
-      value.forEach((predicate) => {
+      value.forEach(predicate => {
         dataset.add(p.rdf.quad(componentNode, p.rdf.namedNode('http://purl.org/linked-data/cube#dimension'), p.rdf.namedNode('https://ld.stadt-zuerich.ch/statistics/property/' + predicate)))
       })
     }
@@ -140,14 +140,14 @@ function convertXlsx (filename, sheet, metadata) {
   const filenameMetadata = 'input/' + metadata
   const filenameOutput = 'target/' + path.basename(filename, '.xlsx') + '.' + path.basename(metadata, '.csv-metadata.json') + '.nt'
 
-  return p.rdf.dataset().import(p.file.read(filenameMetadata).pipe(p.jsonld.parse())).then((metadata) => {
+  return p.rdf.dataset().import(p.file.read(filenameMetadata).pipe(p.jsonld.parse())).then(metadata => {
     return p.run(p.file.read(filenameInput)
       .pipe(p.csvw.xlsx.parse({
         baseIRI: 'file://' + filename,
         metadata: metadata,
         sheet: sheet
       }))
-      .pipe(p.filter((quad) => {
+      .pipe(p.filter(quad => {
         return quad.object.value !== 'undefined'
       }))
       .pipe(p.ntriples.serialize())
@@ -159,8 +159,8 @@ const filenames = [{
   filename: 'hdb.csv',
   metadata: 'hdb.csv-metadata.json'
 }, // {
-  // filename: 'hdb.csv',
-  // metadata: 'hdb_referenznummer.csv-metadata.json'
+// filename: 'hdb.csv',
+// metadata: 'hdb_referenznummer.csv-metadata.json'
 // },
 {
   filename: 'hdb_mapping.csv',
@@ -241,19 +241,19 @@ p.run(() => {
   p.shell.mkdir('-p', 'target/')
 }).then(() => {
   if (program.hdb) {
-    return p.Promise.serially(filenames, (source) => {
+    return p.Promise.serially(filenames, source => {
       console.log('convert: ' + source.filename)
       return convertCsvw(source.filename, source.metadata)
     })
   }
   if (program.lists) {
-    return p.Promise.serially(xlsxSources, (source) => {
+    return p.Promise.serially(xlsxSources, source => {
       console.log('convert: ' + source.filename + ' ' + source.sheet)
       return convertXlsx(source.filename, source.sheet, source.metadata)
     })
   }
 }).then(() => {
   console.log('done')
-}).catch((err) => {
+}).catch(err => {
   console.error(err.stack)
 })

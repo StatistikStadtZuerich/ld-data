@@ -1,0 +1,12 @@
+output csvw
+
+map PUBLISHER from HDB_DATENOBJEKTE {
+	subject template orgIri with DODatenlieferantID;
+
+	types
+		schema.Organization
+
+  properties
+    schema.identifier from DODatenlieferantID;
+    schema.name from DODatenlieferant;
+}

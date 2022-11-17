@@ -1,0 +1,13 @@
+output csvw
+
+map RECHTSGRUNDLAGEN from HDB_RECHTSGRUNDLAGEN {
+	subject template metaLegalIri with id;
+
+	types
+		ssz.LegalFoundation
+
+  properties
+    schema.name from RGBezeichnung;
+    schema.url from RGLink;
+
+}

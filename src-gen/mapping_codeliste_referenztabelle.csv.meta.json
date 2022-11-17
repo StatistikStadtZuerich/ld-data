@@ -1,0 +1,43 @@
+{
+	"@context": "http://www.w3.org/ns/csvw",
+	"url": "file:input/HDB_CODELISTE.csv",
+	"dialect": {
+		"delimiter": ",",
+		"doubleQuote": true
+	},
+	"tableSchema": {
+		"aboutUrl": "https://ld.stadt-zuerich.ch/statistics/termset/{REFERENZTABELLE}",
+		"columns": [
+			{
+				"virtual": true,
+				"propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+				"valueUrl": "http://schema.org/DefinedTermSet"
+			},
+			{
+				"propertyUrl": "http://schema.org/name",
+				"titles": "REFERENZTABELLE"
+			},
+			{
+				"propertyUrl": "http://schema.org/identifier",
+				"titles": "REFERENZTABELLE"
+			},
+			{
+				"propertyUrl": "http://schema.org/hasDefinedTerm",
+				"titles": "CODE",
+				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/code/{CODE}"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "CODE"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "CODENAME"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "Index"
+			}
+		]
+	}
+}

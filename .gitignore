@@ -1,4 +1,5 @@
 .DS_Store
+coverage
 output
 tmp
 node_modules
@@ -7,3 +8,8 @@ node_modules
 *.zip
 .~*
 .eslintrc.yml
+src-gen/mapping_hdb.csv.meta.json
+input
+.env.*
+.project
+assets/cube/metadata.ttl

@@ -1,0 +1,20 @@
+output csvw
+
+map DIMENSIONEN_INSTANCES from HDB_DIMENSIONEN {
+	subject template termIri with Dimensioncode;
+
+	types
+		schema.DefinedTerm
+
+	properties
+		schema.name from Dimensioncodename;
+		schema.description from BESCHREIBUNG;
+		schema.termCode from Dimensioncode;
+		schema.position from Dimensioncodesort;
+		schema.isPartOf template termIri with PARENTCODE;
+		example.dimensionsfilter template 'transform://{0}/{1}' with Dimension Dimensionfilter;
+		schema.inDefinedTermSet template termsetIri with Dimension; // TODO do we do that? Then we know that WHA9000 is part of WHA. If so we need to define the DefinedTermSet
+		example.GLOSSARID from GLOSSARID;
+		schema.url from LINK;
+
+}

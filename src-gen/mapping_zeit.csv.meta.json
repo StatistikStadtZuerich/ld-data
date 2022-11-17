@@ -1,9 +1,9 @@
 {
 	"@context": "http://www.w3.org/ns/csvw",
-	"url": "../input/HDB_ZEIT.csv",
+	"url": "file:input/HDB_ZEIT.csv",
 	"dialect": {
-		"delimiter": ","
-		,"doubleQuote": true
+		"delimiter": ",",
+		"doubleQuote": true
 	},
 	"tableSchema": {
 		"aboutUrl": "https://ld.stadt-zuerich.ch/statistics/code/{ZEIT}",
@@ -16,11 +16,14 @@
 			{
 				"virtual": true,
 				"propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-				"valueUrl": "http://www.w3.org/2004/02/skos/core#Concept"
-			}
-			,
+				"valueUrl": "http://schema.org/DefinedTerm"
+			},
 			{
 				"propertyUrl": "http://schema.org/name",
+				"titles": "ZEIT"
+			},
+			{
+				"propertyUrl": "http://schema.org/termCode",
 				"titles": "ZEIT"
 			},
 			{
@@ -41,8 +44,7 @@
 			{
 				"propertyUrl": "https://ld.stadt-zuerich.ch/schema/referenceTime",
 				"titles": "BEZUGSZEIT"
-			}
-			,
+			},
 			{
 				"suppressOutput": true,
 				"titles": "JAHR"
@@ -55,6 +57,6 @@
 				"suppressOutput": true,
 				"titles": "TAG"
 			}
-		] 
+		]
 	}
 }

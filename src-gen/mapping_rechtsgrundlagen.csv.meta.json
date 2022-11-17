@@ -1,0 +1,62 @@
+{
+	"@context": "http://www.w3.org/ns/csvw",
+	"url": "file:input/HDB_RECHTSGRUNDLAGEN.csv",
+	"dialect": {
+		"delimiter": ",",
+		"doubleQuote": true
+	},
+	"tableSchema": {
+		"aboutUrl": "https://ld.stadt-zuerich.ch/statistics/meta/legal/{id}",
+		"columns": [
+			{
+				"virtual": true,
+				"propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+				"valueUrl": "https://ld.stadt-zuerich.ch/schema/LegalFoundation"
+			},
+			{
+				"propertyUrl": "http://schema.org/name",
+				"titles": "RGBezeichnung"
+			},
+			{
+				"propertyUrl": "http://schema.org/url",
+				"titles": "RGLink"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "id"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "StatusNummer"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "StatusText"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "Title"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "RGGesetzesnummer"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "RGGesetzesnummerRGBezeichnung"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "WFRGKoor"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "RGDatenelementID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "RGLaufnummer"
+			}
+		]
+	}
+}

@@ -1,0 +1,89 @@
+{
+	"@context": "http://www.w3.org/ns/csvw",
+	"url": "file:input/HDB_DIMENSIONEN.csv",
+	"dialect": {
+		"delimiter": ",",
+		"doubleQuote": true
+	},
+	"tableSchema": {
+		"aboutUrl": "https://ld.stadt-zuerich.ch/statistics/code/{Dimensioncode}",
+		"columns": [
+			{
+				"virtual": true,
+				"propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+				"valueUrl": "http://schema.org/DefinedTerm"
+			},
+			{
+				"propertyUrl": "http://schema.org/name",
+				"titles": "Dimensioncodename"
+			},
+			{
+				"propertyUrl": "http://schema.org/description",
+				"titles": "BESCHREIBUNG"
+			},
+			{
+				"propertyUrl": "http://schema.org/termCode",
+				"titles": "Dimensioncode"
+			},
+			{
+				"propertyUrl": "http://schema.org/position",
+				"titles": "Dimensioncodesort"
+			},
+			{
+				"propertyUrl": "http://schema.org/isPartOf",
+				"titles": "PARENTCODE",
+				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/code/{PARENTCODE}"
+			},
+			{
+				"propertyUrl": "http://example.org/dimensionsfilter",
+				"titles": "Dimension",
+				"valueUrl": "transform://{Dimension}/{Dimensionfilter}"
+			},
+			{
+				"propertyUrl": "http://schema.org/inDefinedTermSet",
+				"titles": "Dimension",
+				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/termset/{Dimension}"
+			},
+			{
+				"propertyUrl": "http://example.org/GLOSSARID",
+				"titles": "GLOSSARID"
+			},
+			{
+				"propertyUrl": "http://schema.org/url",
+				"titles": "LINK"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "PARENTCODE"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "PARENTCODENAME"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "Index"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "Dimension"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "Dimensionname"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DimensionOrigin"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DimensionOriginCode"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "Dimensionfilter"
+			}
+		]
+	}
+}

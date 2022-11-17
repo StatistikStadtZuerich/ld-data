@@ -1,0 +1,40 @@
+@base <https://ld.stadt-zuerich.ch/statistics/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix cube: <https://cube.link/> .
+@prefix ssz-schema: <https://ld.stadt-zuerich.ch/schema/> .
+@prefix ssz-dimension: <https://ld.stadt-zuerich.ch/statistics/property/> .
+
+## Static dimensions
+
+ssz-dimension:ZEIT a rdf:Property, cube:KeyDimension ;
+    schema:identifier "ZEIT" ;
+    schema:name "Zeit" .
+
+ssz-dimension:TIME a rdf:Property ; # NOT a KeyDimension!
+    schema:identifier "TIME" ;
+    schema:name "Zeit (ISO)" ;
+    schema:disambiguatingDescription "Zeit in einer vereinfachten, ISO-repräsentation. In dieser Dimension ist immer nur das Enddatum verfügbar, für Perioden sollte es folglich nicht verwendet werden." .
+
+ssz-dimension:RAUM a rdf:Property, cube:KeyDimension ;
+    schema:identifier "RAUM" ;
+    schema:name "Raum" .
+
+# Stuff that is not necessary in the Excel in Gruppencode
+# TODO check if they are still missing
+
+# ssz-dimension:HEO a rdf:Property, cube:KeyDimension ;
+#     schema:identifier "HEO" ;
+#     schema:name "Heimatort" .
+# 
+# ssz-dimension:NAM a rdf:Property, cube:KeyDimension ;
+#     schema:identifier "NAM" ;
+#     schema:name "Namen" .
+# 
+# ssz-dimension:ORT a rdf:Property, cube:KeyDimension ;
+#     schema:identifier "ORT" ;
+#     schema:name "Ort/Zuzugsort/Wegzugsort" .
+    

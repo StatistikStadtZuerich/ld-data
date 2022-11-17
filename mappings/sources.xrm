@@ -5,7 +5,8 @@ dialect SSZ {
 
 logical-source HDB {
 	type csv
-	source "../input/HDB.csv"
+	source "file:input/HDB.csv"
+	null "Dummy"
 	dialect SSZ
 
 	referenceables
@@ -27,19 +28,7 @@ logical-source HDB {
 		KENNZAHL
 		CODE
 		WERT
-		KENNZAHLNAME
-		GRUPPE1
-		GRUPPENCODE1
-		GRUPPE2
-		GRUPPENCODE2
-		GRUPPE3
-		GRUPPENCODE3
-		GRUPPE4
-		GRUPPENCODE4
-		GRUPPE5
-		GRUPPENCODE5
 		RAUMLANG
-		RAUMBESCHREIBUNG
 		WIKIDATAURI
 		REFERENZNUMMER
 		REFERENZTITEL
@@ -67,48 +56,58 @@ logical-source HDB {
 		UPDATE
 		KEY_INFORMATION_ALL
 		GESAMTCODE_RCS
+		CubeID
 		i
 		Text
+		DIMENSION1
+		DIMENSION2
+		DIMENSION3
+		DIMENSION4
+		DIMENSION5
+		DIMENSIONCODE1
+		DIMENSIONCODE2
+		DIMENSIONCODE3
+		DIMENSIONCODE4
+		DIMENSIONCODE5
 }
 
 logical-source HDB_CODELISTE {
 	type csv
-	source "../input/HDB_CODELISTE.csv"
+	source "file:input/HDB_CODELISTE.csv"
 	dialect SSZ
 
 	referenceables
+		CODE
+		CODENAME
+		REFERENZTABELLE
 		Index
-		Code
-		Codename
-		Referenztabelle
 }
 
 logical-source HDB_DIMENSIONEN {
 	type csv
-	source "../input/HDB_DIMENSIONEN.csv"
+	source "file:input/HDB_DIMENSIONEN.csv"
 	dialect SSZ
 
 	referenceables
+		PARENTCODE
+		PARENTCODENAME
+		GLOSSARID
+		LINK
+		BESCHREIBUNG
 		Index
-		Gruppe
-		Gruppenname
-		Gruppencode
-		Gruppencodename
-		Gruppencodesort
-		Parentcode
-		Parentcodename
-		GlossarID
-		Link
-		Beschreibung
-		Bemerkung
-		Hierarchie
-		DWH_Name
-		DWH_Code
+		Dimension
+		Dimensionname
+		Dimensioncode
+		Dimensioncodename
+		Dimensioncodesort
+		DimensionOrigin
+		DimensionOriginCode
+		Dimensionfilter
 }
 
 logical-source HDB_GLOSSAR {
 	type csv
-	source "../input/HDB_GLOSSAR.csv"
+	source "file:input/HDB_GLOSSAR.csv"
 	dialect SSZ
 
 	referenceables
@@ -126,7 +125,7 @@ logical-source HDB_GLOSSAR {
 
 logical-source HDB_KENZAHLEN {
 	type csv
-	source "../input/HDB_KENZAHLEN.csv"
+	source "file:input/HDB_KENZAHLEN.csv"
 	dialect SSZ
 
 	referenceables
@@ -141,25 +140,11 @@ logical-source HDB_KENZAHLEN {
 		GlossarID
 		Beschreibung
 		Methode
-		DWH_Name
-		DWH_Wert
-		Bemerkung
-}
-
-logical-source HDB_MAPPING {
-	type csv
-	source "../input/HDB_MAPPING.csv"
-	dialect SSZ
-
-	referenceables
-		GESAMTCODE_RCS
-		REFERENZNUMMER
-		TITEL
 }
 
 logical-source HDB_QUELLE {
 	type csv
-	source "../input/HDB_QUELLE.csv"
+	source "file:input/HDB_QUELLE.csv"
 	dialect SSZ
 
 	referenceables
@@ -174,7 +159,7 @@ logical-source HDB_QUELLE {
 
 logical-source HDB_RAUM {
 	type csv
-	source "../input/HDB_RAUM.csv"
+	source "file:input/HDB_RAUM.csv"
 	dialect SSZ
 
 	referenceables
@@ -183,7 +168,6 @@ logical-source HDB_RAUM {
 		Raumebene
 		RaumebeneParent
 		RaumSort
-		RaumHierarchie
 		WikidataURI
 		Beschreibung
 		Mapping
@@ -202,11 +186,12 @@ logical-source HDB_RAUM {
 		GmdeCd
 		StaatCd
 		AggloCd
+		RaumFilter
 }
 
 logical-source HDB_ZEIT {
 	type csv
-	source "../input/HDB_ZEIT.csv"
+	source "file:input/HDB_ZEIT.csv"
 	dialect SSZ
 
 	referenceables
@@ -220,8 +205,169 @@ logical-source HDB_ZEIT {
 		PERIODEENDE
 }
 
+logical-source HDB_DATENOBJEKTE {
+	type csv
+	source "file:input/HDB_DATENOBJEKTE.csv"
+	dialect SSZ
 
+	referenceables
+		id
+		DOAktualisierungID
+		DOAndereDienstabteilung
+		DOAndereDienstabteilungID
+		DOBeschreibungLink1
+		DOBeschreibungLink2
+		DOBeschreibungLink3
+		DODatenaustausch
+		DODatenaustauschID
+		DODatenbearbeitungszweck
+		DODatenbezugBemerkungen
+		DODatenbezugLink1
+		DODatenbezugLink2
+		DODatenbezugLink3
+		DODatenformat
+		DODatenformatID
+		DODatenzugang0
+		DODatenzugangID
+		DOGeschaeftsbereich
+		DOKategorieID
+		DOMetadatenFreigabeId
+		DOOGDBemerkungen
+		DOOGDFreigabeId
+		DOOGDFreigabedatum
+		DOOGDLizenzID
+		DOOGDMassnahmen
+		DOOGDMassnahmenID
+		DOOGDPrioritaet
+		DOOGDPrioritaetID
+		DOOGDPruefung
+		DOOGDPruefungID
+		DOOGDRechtsgrundlagen
+		DOOGDRechtsgrundlagenID
+		DOPersonendaten
+		DOPersonendatenID
+		DORaeumlicheBeziehungID
+		DORechtsgrundlagenBemerkungen
+		DORechtsgrundlagenLink1
+		DORechtsgrundlagenLink2
+		DORechtsgrundlagenLink3
+		DORolleDatenKuratorId
+		DORolleDatenVerantwortlicherId
+		DORolletechnDatenmanagerId
+		DOVeroeffentlichung
+		DOVeroeffentlichungID
+		DOVertraulichkeit
+		DOVertraulichkeitBemerkungen
+		DOVertraulichkeitID
+		DOVertraulichkeitsPruefdatum
+		DOWeitergabe
+		DOWeitergabeFilter
+		DOWeitergabeFilterID
+		DOWeitergabeID
+		Title
+		DOAndereDienstabteilungEindeutig
+		DORechtsgrundlagenWeitergabeBeme
+		DOVertraulichkeitsPruefstelleId
+		DOBeschreibung
+		DOAktualisierung
+		DOBeschreibungBemerkungen
+		DODatenelementID
+		DOKategorie
+		DOLaufnummer
+		DOMetadatenErfasserId
+		DOMetadatenFreigabedatum
+		DOOGDLizenz
+		DORechtsgrundlagen
+		DORechtsgrundlagenID
+		DOuebergordneterDB
+		StatusNummer
+		StatusText
+		WFDOKoor
+		DODatenlieferant
+		DOAktualisierungsDatum
+		DODatenbis
+		DODatenvon
+		DORaeumlicheBeziehung
+		DODienstabteilung
+		DOMDQuellsystem
+		DOMDQuellsystemID
+		DOName
+		DOOGDStatus
+		DOOGDStatusID
+		DOuebergordneterDBID
+		DODienstabteilungID
+		DODatenlieferantID
+		DODienstabteilungDOName
+		DOSchluesselwoerter
+		DOuebergeordneterDBName
+}
 
+logical-source HDB_DATENATTRIBUTE {
+	type csv
+	source "file:input/HDB_DATENATTRIBUTE.csv"
+	dialect SSZ
 
+	referenceables
+		id
+		DAAndereDienstabteilung
+		DAAndereDienstabteilungID
+		DABeschreibung
+		DABeschreibungBemerkungen
+		DABeschreibungLink1
+		DABeschreibungLink2
+		DABeschreibungLink3
+		DADienstabteilungsFilter
+		DADienstabteilungsFilterID
+		DAFeldeinheit
+		DAFeldeinheitID
+		DAFeldtyp
+		DAFeldtypID
+		DAFeldwerteliste
+		DAFeldwertelisteID
+		DAMDQuellsystemIdentifikator
+		DASSZAuswertungsregel
+		DASSZFeldwerteliste
+		DASSZFeldwertelisteID
+		DASSZLevel
+		DASSZLevelID
+		DASSZParent
+		DASSZSort
+		DAVertraulichkeit
+		DAVertraulichkeitID
+		DAuebergeordneterDBName
+		DAuebergeordneterDOName
+		Title
+		DAAndereDienstabteilungEindeutig
+		DADatenelementIdentifikator
+		DAName
+		DAtechFeldname
+		StatusNummer
+		WFDAKoor
+		DADienstabteilungID
+		DADienstabteilung
+		DALaufnummer
+		DAMDQuellsystem
+		DAuebergordnetesDOID
+		DAuebergordnetesDO
+		StatusText
+}
 
+logical-source HDB_RECHTSGRUNDLAGEN {
+	type csv
+	source "file:input/HDB_RECHTSGRUNDLAGEN.csv"
+	dialect SSZ
+
+	referenceables
+		id
+		StatusNummer
+		StatusText
+		Title
+		RGBezeichnung
+		RGGesetzesnummer
+		RGGesetzesnummerRGBezeichnung
+		WFRGKoor
+		RGDatenelementID
+		RGLink
+		RGLaufnummer
+}
 

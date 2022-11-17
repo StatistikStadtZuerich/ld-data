@@ -1,0 +1,180 @@
+BASE <https://ld.stadt-zuerich.ch/> 
+PREFIX qudt:    <http://qudt.org/schema/qudt#>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX wv: <http://vocab.org/waiver/terms/norms>
+PREFIX sd: <http://www.w3.org/ns/sparql-service-description#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX schema: <http://schema.org/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX doap: <http://usefulinc.com/ns/doap#>
+PREFIX duv: <http://www.w3.org/ns/duv#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX cube: <https://cube.link/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ssz-dimension: <https://ld.stadt-zuerich.ch/statistics/property/>
+PREFIX ssz-schema: <https://ld.stadt-zuerich.ch/schema/>
+
+<.well-known/void> a void:DatasetDescription;
+    schema:name "Datasets of City of Zurich"@en ;
+    schema:name "Datensätze der Stadt Zürich"@de ;
+    dcterms:creator <org/SSZ> ;
+    schema:hasPart <catalog/SSZ/cube>, <catalog/SSZ/view> .
+
+##
+## Organizations
+##
+
+<org/zazuko> a schema:Corporation ;
+    schema:name "Zazuko GmbH" ;
+    rdfs:seeAlso wd:Q93230157 ;
+    schema:url <https://zazuko.com/>
+    .
+
+<org/SSZ> a foaf:Organization, schema:GovernmentOrganization;
+    schema:name "Statistik Stadt Zürich"@de;
+    rdfs:seeAlso wd:Q53630447 ;
+    foaf:homepage <https://www.stadt-zuerich.ch/prd/de/index/statistik.html>
+    .
+
+##
+## Catalog
+## 
+
+<catalog/SSZ/cube> a dcat:Catalog, schema:DataCatalog  ;
+  schema:name "Statistische Daten der Stadt Zürich"@de;
+  schema:description "Dieser Datensatz enthält statistische Daten der Stadt Zürich als OLAP Cubes im RDF Cube Vokabular"@de;
+  dcterms:publisher <org/SSZ> ;
+  #schema:dataset <ssz/cube/GES-SEX-TOU> ; # das wären Links zu allen raw cubes, range ist cube:Cube
+  doap:repository [
+      a doap:GitRepository ;
+      doap:browse <https://github.com/statistikstadtzuerich/ld-data> ;
+      doap:location "git@github.com:statistikstadtzuerich/ld-data.git" 
+  ] ;
+  void:sparqlEndpoint <https://stat.stadt-zuerich.ch/query>;
+  .
+
+<catalog/SSZ/view> a dcat:Catalog, schema:DataCatalog  ;
+  schema:name "Statistische Daten der Stadt Zürich"@de;
+  schema:description "Dieser Datensatz enthält statistische Daten der Stadt Zürich als aufbereitete Datensätze in CSV und RDF Format"@de;
+  dcterms:publisher <org/SSZ> ;
+#  schema:dataset <views/V000001>, <views/V000002>, <views/V000003> ;
+  void:sparqlEndpoint <https://stat.stadt-zuerich.ch/query>;
+  .
+
+##
+## Cube Beispiel
+##
+
+#<ssz/cube/GES-SEX-TOU> a cube:Cube ;
+#  dcterms:rights <ssz/rights> ;
+#  schema:license <http://creativecommons.org/licenses/by/3.0/> ;
+#  schema:name "Sterbefälle nach Geschlecht & Todesursache"@de .
+
+##
+## Datasets
+##
+
+# <views/V000001> a void:Dataset, dcat:Dataset, schema:Dataset  ;
+#     dcterms:identifier "V000001" ;
+#     schema:name "Bevölkerung nach Stadtquartier, seit 1934"@de ;
+#     dcat:keyword "Bevölkerung", "Stadtquartier" ;
+#     schema:publisher <org/SSZ>;
+#     schema:contactPoint <org/SSZ> ;
+#     schema:contributor <org/Zazuko> ;
+#     dcat:distribution <views/V000001/csv>, <views/V000001/rdf>  ;
+#     schema:dateCreated "2020-10-20"^^xsd:date;
+#     schema:dateModified "2020-10-20"^^xsd:date;
+# #    dcterms:modified "%%DATEMODIFIED%%"^^xsd:date;
+# #    duv:hasUsage <dataset/meta-usage> ;
+# .
+
+# <views/V000002> a void:Dataset, dcat:Dataset, schema:Dataset  ;
+#     dcterms:identifier "V000002" ;
+#     schema:name "Wirtschaftliche Bevölkerung der Stadt Zürich seit 1934 nach Herkunft, Geschlecht und Stadtquartier"@de ;
+#     dcat:keyword "Bevölkerung", "Geschlecht", "Herkunft", "Stadtquartier" ;
+#     dcterms:rights <ssz/rights1> ;
+#     schema:publisher <org/SSZ>;
+#     schema:contactPoint <org/SSZ> ;
+#     schema:contributor <org/Zazuko> ;
+#     dcat:distribution <views/V000002/csv> ;
+#     schema:dateCreated "2020-10-20"^^xsd:date;
+#     schema:dateModified "2020-10-20"^^xsd:date
+# .
+
+# <views/V000003> a void:Dataset, dcat:Dataset, schema:Dataset  ;
+#     dcterms:identifier "V000003" ;
+#     schema:name "Bevölkerung nach 5-Jahresaltersklasse und statistischer Zone ab 1911"@de ;
+#     dcat:keyword "Bevölkerung", "Altersklassen", "Statistische Zone" ;
+#     dcterms:rights <ssz/rights1> ;
+#     schema:publisher <org/SSZ>;
+#     schema:contactPoint <org/SSZ> ;
+#     schema:contributor <org/Zazuko> ;
+#     dcat:distribution <views/V000003/csv> ;
+#     schema:dateCreated "2020-10-20"^^xsd:date;
+#     schema:dateModified "2020-10-20"^^xsd:date;
+# .
+
+# <views/V000001/csv> a dcat:Distribution ;
+#     dcterms:format "CSV" ;
+#     dcat:mediaType "text/csv" ;
+#     dcat:downloadURL  <https://stat.stadt-zuerich.ch/views/V000001/observation/&format=csv> .
+
+# <views/V000001/rdf> a dcat:Distribution ;
+#     dcterms:format "RDF" ;
+#     dcat:mediaType "application/n-triples" ;
+#     dcat:downloadURL  <https://stat.stadt-zuerich.ch/views/V000001/observation/> .
+
+# <views/V000002/csv> a dcat:Distribution ;
+#     dcterms:format "CSV" ;
+#     dcat:mediaType "text/csv" ;
+#     dcat:downloadURL  <hhttps://stat.stadt-zuerich.ch/views/V000002/observation/&format=csv> .
+
+# <views/V000003/csv> a dcat:Distribution ;
+#     dcterms:format "CSV" ;
+#     dcat:mediaType "text/csv" ;
+#     dcat:downloadURL  <https://stat.stadt-zuerich.ch/views/V000003/observation/&format=csv> .
+
+## rights
+
+<ssz/rights1> a dcterms:RightsStatement ;
+  schema:name "Statistikgesetz (StatG)"@de ;
+  schema:description "Zur Auskunft oder Mitwirkung verpflichtete öffentliche Organe oder Private erteilen wahrheitsgetreue Informationen."@de ;
+  skos:scopeNote "431.1 § 13." .
+
+<ssz/rights2> a dcterms:RightsStatement ;
+  schema:name "Stadtratsbeschluss über die Departementsgliederung und -aufgaben (StRB DGA)"@de ;
+  schema:description "Art. 7 Statistik Stadt Zürich erfüllt insbesondere folgende Aufgaben: a Vorbereitung, Durchführung und Analyse der von Stadt, Kanton und Bund angeordneten Erhebungen ..."@de ;
+  skos:scopeNote "172.110 § 7." .
+
+## Static dimensions
+
+ssz-dimension:ZEIT a rdf:Property ;
+    schema:identifier "ZEIT" ;
+    schema:name "Zeit" ;
+    schema:description "Repräsentation der Zeit als Konzept, repräsentiert die vollständige Komplexität." .
+
+ssz-dimension:TIME a rdf:Property ;
+    schema:identifier "TIME" ;
+    schema:name "Zeit" ;
+    schema:description "Repräsentation der Zeit als ISO 8601 Datum (vereinfacht)." .
+
+ssz-dimension:RAUM a rdf:Property ;
+    schema:identifier "RAUM" ;
+    schema:name "Raum" .
+
+## schema
+
+ssz-schema:referenceTime a rdf:Property ;
+    schema:name "Referenzzeit" .
+
+ssz-schema:hasEnd a rdf:Property ;
+    schema:name "Ende der Periode"@de ;
+    schema:description "Ende einer zeitlichen Einheit"@de ;
+    schema:description "End of a temporal entity."@en ;
+    schema:identifier "hasEnd" .

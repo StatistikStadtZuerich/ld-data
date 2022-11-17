@@ -1,177 +1,265 @@
 language-tags {
-	de
-	en
-	fr
-	it
+  de
+  en
+  fr
+  it
 }
 
 vocabulary xsd {
-	prefix "xsd" "http://www.w3.org/2001/XMLSchema#"
+  prefix "xsd" "http://www.w3.org/2001/XMLSchema#"
 
-	datatypes
-		date
-		float
-		gYear
-		integer
+  datatypes
+    date
+    float
+    gYear
+    integer
 }
 
 vocabulary cube {
-	prefix "cube" "https://cube.link/"
+  prefix "cube" "https://cube.link/"
 
-	classes
-		Cube
-		Constraint
-		ObservationSet
-		Observation
+  classes
+    Cube
+    Constraint
+    ObservationSet
+    Observation
+    KeyDimension
+    MeasureDimension
+    SharedDimension
 
-	properties
-		observationSet
-		observationShape
-		observation
-		observedBy
+  properties
+    observation
+    observationConstraint
+    observationSet
+    observedBy
+}
+
+vocabulary meta {
+  prefix "meta" "https://cube.link/meta/"
+
+  classes
+    Hierarchy
+
+  properties
+    dataKind
+    applicationIgnores
+    dimensionRelation
+    relatesTo
+    inHierarchy
+    nextInHierarchy
+    hierarchyRoot
+}
+
+vocabulary relation {
+  prefix "relation" "https://cube.link/relation/"
+
+  classes
+    StandardError
+
+    properties
 }
 
 vocabulary dimension {
-	prefix "dimension" "https://ld.stadt-zuerich.ch/statistics/dimension/"
+  prefix "dimension" "https://ld.stadt-zuerich.ch/statistics/dimension/"
 
-	properties
-		ZEIT
-		BEZUGZEIT
-		RAUM
-		ERWARTETE_AKTUALISIERUNG
-		DATENSTAND
+  properties
+    ZEIT
+    BEZUGZEIT
+    RAUM
+    ERWARTETE_AKTUALISIERUNG
+    DATENSTAND
+}
+
+vocabulary property {
+  prefix "property" "https://ld.stadt-zuerich.ch/statistics/property/"
+
+  properties
+    ZEIT
+    TIME
+    RAUM
+    REPLACE
 }
 
 vocabulary skos {
-	prefix "skos" "http://www.w3.org/2004/02/skos/core#"
+  prefix "skos" "http://www.w3.org/2004/02/skos/core#"
 
-	classes
-		Concept
-		ConceptScheme
-		Collection
+  classes
+    Concept
+    ConceptScheme
+    Collection
 
-	properties
-		notation
-		prefLabel
-		altLabel
-		hiddenLabel
-		member
-		broader
-		narrower
-		inScheme
-		scopeNote
+  properties
+    notation
+    prefLabel
+    altLabel
+    hiddenLabel
+    member
+    broader
+    narrower
+    inScheme
+    scopeNote
 }
 
 vocabulary example {
-	prefix "ex" "http://example.org/"
+  prefix "ex" "http://example.org/"
 
-	properties
-		ANZ_GRUPPEN
-		GLOSSARID
-		GRUPPENCODESORT1
-		GRUPPENCODESORT2
-		GRUPPENCODESORT3
-		GRUPPENCODESORT4
-		GRUPPENCODESORT5
-		KENNZAHLKLASSE
-		QUELLE
-		UPDATE
-		BEZUGSPERIODE
-		CODE
-		CODENAME
-		FUSSNOTEATTRIBUT
-		FUSSNOTEKENNZAHL
-		FUSSNOTEKENNZAHLATTRIBUT
-		FUSSNOTERAUM
-		FUSSNOTEZEIT
-		FUSSNOTEZELLE
-		GESAMTCODE_RCS
-		GRUPPE1
-		GRUPPE2
-		GRUPPE3
-		GRUPPE4
-		GRUPPE5
-		KENNZAHL
-		REFERENZNUMMER
-		hierarchie
-		// RAUM
-		Raumebene
-		RaumebeneParent
-		
+  properties
+    ANZ_GRUPPEN
+    GLOSSARID
+    GRUPPENCODESORT1
+    GRUPPENCODESORT2
+    GRUPPENCODESORT3
+    GRUPPENCODESORT4
+    GRUPPENCODESORT5
+    KENNZAHLKLASSE
+    QUELLE
+    UPDATE
+    BEZUGSPERIODE
+    BEZUGSZEIT
+    CODE
+    CODENAME
+    FUSSNOTEATTRIBUT
+    FUSSNOTEKENNZAHL
+    FUSSNOTEKENNZAHLATTRIBUT
+    FUSSNOTERAUM
+    FUSSNOTEZEIT
+    FUSSNOTEZELLE
+    GESAMTCODE_RCS
+    DIMENSION1
+    DIMENSION2
+    DIMENSION3
+    DIMENSION4
+    DIMENSION5
+    KENNZAHL
+    KENNZAHL_REPLACE
+    REFERENZNUMMER
+    hierarchie
+    // RAUM
+    Raumebene
+    RaumebeneParent
+    ERWARTETE_AKTUALISIERUNG
+    DATENSTAND
+    raumfilter
+    containsraum
+    dimensionsfilter
 }
 
 vocabulary schema {
-	prefix "schema" "http://schema.org/"
+  prefix "schema" "http://schema.org/"
 
-	classes
-		Organization
-		PostalAdress
-		CreativeWork
-		DefinedTerm
-		DefinedTermSet
-		Place
+  classes
+    Organization
+    PostalAdress
+    CreativeWork
+    DefinedTerm
+    DefinedTermSet
+    Place
+    Dataset
 
-	properties
-		name
-		identifier
-		inDefinedTermSet
-		termCode
-		hasDefinedTerm
-		isPartOf
-		hasPart
-		description
-		sameAs
-		position
-		validFrom
-		validThrough
+  properties
+    name
+    identifier
+    inDefinedTermSet
+    termCode
+    hasDefinedTerm
+    isPartOf
+    hasPart
+    containsPlace
+    containedInPlace
+    description
+    sameAs
+    position
+    validFrom
+    validThrough
+    disambiguatingDescription
+    url
+    alternateName
+    startDate
+    endDate
+}
+
+vocabulary dct {
+  prefix "dct" "http://purl.org/dc/terms/"
+
+  properties
+    identifier
+    description
+    accrualPeriodicity
+    issued
+    modified
+    publisher
+    title
+    license
+    spatialRelationship
+    language
+}
+
+vocabulary dcat {
+  prefix "dcat" "http://www.w3.org/ns/dcat#"
+
+  properties
+    contactPoint
+    keyword
+    landingPage
+    theme
 }
 
 vocabulary rdf {
-	prefix "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	
-	classes
-		Property
+  prefix "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+
+  classes
+    Property
 }
 
 vocabulary qudt {
-	prefix "qudt" "http://qudt.org/vocab/unit#"
-	
-	classes
-		Unit
-	
-	properties
-		unit
+  prefix "qudt" "http://qudt.org/schema/qudt/"
+
+  classes
+    Unit
+    NominalScale
+    OrdinalScale
+    IntervalScale
+    RatioScale
+
+  properties
+    unit
+    order
+    scaleType
 }
 
 vocabulary time {
-	prefix "time" "http://www.w3.org/2006/time#"
-	
-	classes
-		TemporalEntity
-		
-	properties
-		hasBeginning
-		hasEnd
-		inXSDDate
-}
+  prefix "time" "http://www.w3.org/2006/time#"
 
-vocabulary qudt {
-	prefix "qudt" "http://qudt.org/schema/qudt/"
-	
-	properties
-		order
+  classes
+    TemporalEntity
+
+  properties
+    hasBeginning
+    hasEnd
+    inXSDDate
 }
 
 vocabulary ssz {
-	prefix "ssz" "https://ld.stadt-zuerich.ch/schema/"
-	
-	properties
-		rounding
-		referenceTime
-		hasBeginning
-		hasEnd
-		
+  prefix "ssz" "https://ld.stadt-zuerich.ch/schema/"
+
+  classes
+    Attribute
+    LegalFoundation
+
+  properties
+    view
+    dataObject
+    rounding
+    referenceTime
+    hasBeginning
+    hasEnd
+    filterOf
+    legalFoundation
+    dataQuality
+    usageNotes
+    dataType
+    dataUnit
+    valueList
+    metadataCreator
 }
-
-
 

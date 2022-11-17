@@ -1,0 +1,12 @@
+output csvw
+
+map DATAOWNER from HDB_DATENOBJEKTE {
+	subject template orgIri with DODienstabteilungID;
+
+	types
+		schema.Organization
+
+  properties
+    schema.identifier from DODienstabteilungID;
+    schema.name from DODienstabteilung;
+}

@@ -1,0 +1,15 @@
+PREFIX cube: <https://cube.link/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ssz: <https://ld.stadt-zuerich.ch/schema/>
+
+INSERT {
+  GRAPH <https://lindas.admin.ch/stadtzuerich/stat> {
+    <https://ld.stadt-zuerich.ch/catalog/SSZ/cube> schema:dataset ?view ;
+  }}
+WHERE 
+{
+  GRAPH <https://lindas.admin.ch/stadtzuerich/stat> {
+    ?view a cube:Cube
+}}

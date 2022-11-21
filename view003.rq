@@ -1,0 +1,208 @@
+SELECT DISTINCT ?dimension0 ?dimension1 ?dimension2 ?dimension3 ?dimension4 ?dimension5 ?dimension6 ?dimension7 ?dimension8 ?dimension9 ?dimension10 ?dimension11 ?dimension12 ?dimension13 ?dimension14 ?dimension15 ?dimension16 ?dimension17 ?dimension18 ?dimension19 ?dimension20 ?dimension21 ?dimension22 ?dimension23 ?dimension24 WHERE {
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet0 .
+  ?observationSet0 <https://cube.link/observation> ?source0 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet1 .
+  ?observationSet1 <https://cube.link/observation> ?source1 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet2 .
+  ?observationSet2 <https://cube.link/observation> ?source2 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet3 .
+  ?observationSet3 <https://cube.link/observation> ?source3 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet4 .
+  ?observationSet4 <https://cube.link/observation> ?source4 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet5 .
+  ?observationSet5 <https://cube.link/observation> ?source5 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet6 .
+  ?observationSet6 <https://cube.link/observation> ?source6 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet7 .
+  ?observationSet7 <https://cube.link/observation> ?source7 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet8 .
+  ?observationSet8 <https://cube.link/observation> ?source8 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet9 .
+  ?observationSet9 <https://cube.link/observation> ?source9 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet10 .
+  ?observationSet10 <https://cube.link/observation> ?source10 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet11 .
+  ?observationSet11 <https://cube.link/observation> ?source11 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet12 .
+  ?observationSet12 <https://cube.link/observation> ?source12 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet13 .
+  ?observationSet13 <https://cube.link/observation> ?source13 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet14 .
+  ?observationSet14 <https://cube.link/observation> ?source14 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet15 .
+  ?observationSet15 <https://cube.link/observation> ?source15 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet16 .
+  ?observationSet16 <https://cube.link/observation> ?source16 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet17 .
+  ?observationSet17 <https://cube.link/observation> ?source17 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet18 .
+  ?observationSet18 <https://cube.link/observation> ?source18 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet19 .
+  ?observationSet19 <https://cube.link/observation> ?source19 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW-ALT> <https://cube.link/observationSet> ?observationSet20 .
+  ?observationSet20 <https://cube.link/observation> ?source20 .
+  <https://ld.stadt-zuerich.ch/statistics/BEW> <https://cube.link/observationSet> ?observationSet21 .
+  ?observationSet21 <https://cube.link/observation> ?source21 .
+  ?source0 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension0 .
+  ?source1 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension1 .
+  ?source2 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension2 .
+  ?source3 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension3 .
+  ?source4 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension4 .
+  ?source5 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension5 .
+  ?source6 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension6 .
+  ?source7 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension7 .
+  ?source8 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension8 .
+  ?source9 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension9 .
+  ?source10 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension10 .
+  ?source11 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension11 .
+  ?source12 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension12 .
+  ?source13 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension13 .
+  ?source14 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension14 .
+  ?source15 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension15 .
+  ?source16 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension16 .
+  ?source17 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension17 .
+  ?source18 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension18 .
+  ?source19 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension19 .
+  ?source20 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension20 .
+  ?source21 <https://ld.stadt-zuerich.ch/statistics/measure/BEW> ?dimension21 .
+  ?source0 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source1 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source2 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source3 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source4 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source5 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source6 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source7 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source8 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source9 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source10 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source11 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source12 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source13 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source14 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source15 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source16 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source17 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source18 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source19 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source20 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source21 <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ?dimension22 .
+  ?source0 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source1 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source2 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source3 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source4 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source5 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source6 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source7 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source8 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source9 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source10 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source11 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source12 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source13 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source14 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source15 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source16 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source17 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source18 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source19 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source20 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?source21 <https://ld.stadt-zuerich.ch/statistics/property/ZEIT> ?dimension23 .
+  ?dimension23 <https://ld.stadt-zuerich.ch/schema/hasEnd> ?dimension24 .
+  ?source0 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension25 .
+  ?source1 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension26 .
+  ?source2 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension27 .
+  ?source3 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension28 .
+  ?source4 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension29 .
+  ?source5 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension30 .
+  ?source6 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension31 .
+  ?source7 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension32 .
+  ?source8 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension33 .
+  ?source9 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension34 .
+  ?source10 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension35 .
+  ?source11 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension36 .
+  ?source12 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension37 .
+  ?source13 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension38 .
+  ?source14 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension39 .
+  ?source15 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension40 .
+  ?source16 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension41 .
+  ?source17 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension42 .
+  ?source18 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension43 .
+  ?source19 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension44 .
+  ?source20 <https://ld.stadt-zuerich.ch/statistics/property/ALT> ?dimension45 .
+  ?dimension23 <https://ld.stadt-zuerich.ch/schema/referenceTime> ?dimension46 .
+  FILTER (
+    (?dimension25 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0501>)
+  )
+  FILTER (
+    (?dimension26 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0502>)
+  )
+  FILTER (
+    (?dimension27 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0511>)
+  )
+  FILTER (
+    (?dimension28 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0512>)
+  )
+  FILTER (
+    (?dimension29 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0513>)
+  )
+  FILTER (
+    (?dimension30 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0514>)
+  )
+  FILTER (
+    (?dimension31 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0515>)
+  )
+  FILTER (
+    (?dimension32 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0516>)
+  )
+  FILTER (
+    (?dimension33 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0517>)
+  )
+  FILTER (
+    (?dimension34 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0518>)
+  )
+  FILTER (
+    (?dimension35 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0519>)
+  )
+  FILTER (
+    (?dimension36 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0520>)
+  )
+  FILTER (
+    (?dimension37 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0503>)
+  )
+  FILTER (
+    (?dimension38 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0504>)
+  )
+  FILTER (
+    (?dimension39 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0505>)
+  )
+  FILTER (
+    (?dimension40 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0506>)
+  )
+  FILTER (
+    (?dimension41 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0507>)
+  )
+  FILTER (
+    (?dimension42 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0508>)
+  )
+  FILTER (
+    (?dimension43 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0509>)
+  )
+  FILTER (
+    (?dimension44 = <https://ld.stadt-zuerich.ch/statistics/code/ALT0510>)
+  )
+  FILTER (
+    (?dimension45 = <https://ld.stadt-zuerich.ch/statistics/code/ALT9100>)
+  )
+  FILTER (
+    (?dimension22 IN (<https://ld.stadt-zuerich.ch/statistics/code/R3Z001>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z002>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z003>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z004>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z005>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z006>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z007>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z008>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z009>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z010>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z011>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z012>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z013>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z014>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z015>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z016>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z017>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z018>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z019>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z020>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z021>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z022>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z023>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z024>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z025>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z026>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z027>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z028>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z029>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z030>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z031>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z032>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z033>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z034>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z035>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z036>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z037>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z038>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z039>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z040>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z041>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z042>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z043>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z044>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z045>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z046>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z047>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z048>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z049>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z050>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z051>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z052>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z053>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z054>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z055>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z056>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z057>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z058>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z059>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z060>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z061>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z062>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z063>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z064>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z065>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z066>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z067>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z068>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z069>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z070>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z071>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z072>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z073>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z074>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z075>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z076>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z077>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z078>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z079>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z080>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z081>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z082>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z083>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z084>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z085>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z086>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z087>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z088>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z089>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z090>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z091>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z092>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z093>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z094>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z095>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z096>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z097>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z098>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z099>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z100>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z101>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z102>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z103>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z104>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z105>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z106>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z107>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z108>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z109>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z110>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z111>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z112>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z113>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z114>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z115>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z116>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z117>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z118>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z119>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z120>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z121>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z122>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z123>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z124>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z125>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z126>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z127>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z128>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z129>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z130>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z131>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z132>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z133>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z134>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z135>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z136>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z137>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z138>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z139>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z140>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z141>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z142>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z143>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z144>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z145>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z146>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z147>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z148>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z149>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z150>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z151>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z152>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z153>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z154>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z155>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z156>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z157>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z158>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z159>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z160>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z161>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z162>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z163>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z164>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z165>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z166>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z167>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z168>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z169>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z170>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z171>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z172>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z173>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z174>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z175>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z176>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z177>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z178>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z179>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z180>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z181>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z182>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z183>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z184>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z185>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z186>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z187>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z188>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z189>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z190>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z191>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z192>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z193>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z194>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z195>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z196>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z197>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z198>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z199>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z200>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z201>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z202>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z203>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z204>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z205>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z206>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z207>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z208>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z209>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z210>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z211>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z212>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z213>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z214>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z215>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z216>, <https://ld.stadt-zuerich.ch/statistics/code/R3Z999>, <https://ld.stadt-zuerich.ch/statistics/code/R00015>, <https://ld.stadt-zuerich.ch/statistics/code/R00011>, <https://ld.stadt-zuerich.ch/statistics/code/R00012>, <https://ld.stadt-zuerich.ch/statistics/code/R00016>, <https://ld.stadt-zuerich.ch/statistics/code/R00013>, <https://ld.stadt-zuerich.ch/statistics/code/R00014>, <https://ld.stadt-zuerich.ch/statistics/code/R00021>, <https://ld.stadt-zuerich.ch/statistics/code/R00023>, <https://ld.stadt-zuerich.ch/statistics/code/R00024>, <https://ld.stadt-zuerich.ch/statistics/code/R00022>, <https://ld.stadt-zuerich.ch/statistics/code/R00031>, <https://ld.stadt-zuerich.ch/statistics/code/R00033>, <https://ld.stadt-zuerich.ch/statistics/code/R00034>, <https://ld.stadt-zuerich.ch/statistics/code/R00032>, <https://ld.stadt-zuerich.ch/statistics/code/R00041>, <https://ld.stadt-zuerich.ch/statistics/code/R00042>, <https://ld.stadt-zuerich.ch/statistics/code/R00044>, <https://ld.stadt-zuerich.ch/statistics/code/R00036>, <https://ld.stadt-zuerich.ch/statistics/code/R00051>, <https://ld.stadt-zuerich.ch/statistics/code/R00052>, <https://ld.stadt-zuerich.ch/statistics/code/R00061>, <https://ld.stadt-zuerich.ch/statistics/code/R00063>, <https://ld.stadt-zuerich.ch/statistics/code/R00071>, <https://ld.stadt-zuerich.ch/statistics/code/R00072>, <https://ld.stadt-zuerich.ch/statistics/code/R00073>, <https://ld.stadt-zuerich.ch/statistics/code/R00074>, <https://ld.stadt-zuerich.ch/statistics/code/R00081>, <https://ld.stadt-zuerich.ch/statistics/code/R00082>, <https://ld.stadt-zuerich.ch/statistics/code/R00083>, <https://ld.stadt-zuerich.ch/statistics/code/R00091>, <https://ld.stadt-zuerich.ch/statistics/code/R00092>, <https://ld.stadt-zuerich.ch/statistics/code/R00101>, <https://ld.stadt-zuerich.ch/statistics/code/R00102>, <https://ld.stadt-zuerich.ch/statistics/code/R00111>, <https://ld.stadt-zuerich.ch/statistics/code/R00115>, <https://ld.stadt-zuerich.ch/statistics/code/R00119>, <https://ld.stadt-zuerich.ch/statistics/code/R00121>, <https://ld.stadt-zuerich.ch/statistics/code/R00122>, <https://ld.stadt-zuerich.ch/statistics/code/R00123>, <https://ld.stadt-zuerich.ch/statistics/code/R09999>, <https://ld.stadt-zuerich.ch/statistics/code/R0QUNB>, <https://ld.stadt-zuerich.ch/statistics/code/R10000>, <https://ld.stadt-zuerich.ch/statistics/code/R00200>, <https://ld.stadt-zuerich.ch/statistics/code/R00600>, <https://ld.stadt-zuerich.ch/statistics/code/R00300>, <https://ld.stadt-zuerich.ch/statistics/code/R00700>, <https://ld.stadt-zuerich.ch/statistics/code/R00800>, <https://ld.stadt-zuerich.ch/statistics/code/R01200>, <https://ld.stadt-zuerich.ch/statistics/code/R00500>, <https://ld.stadt-zuerich.ch/statistics/code/R00400>, <https://ld.stadt-zuerich.ch/statistics/code/R01300>, <https://ld.stadt-zuerich.ch/statistics/code/R01000>, <https://ld.stadt-zuerich.ch/statistics/code/R01100>, <https://ld.stadt-zuerich.ch/statistics/code/R01400>, <https://ld.stadt-zuerich.ch/statistics/code/R01500>, <https://ld.stadt-zuerich.ch/statistics/code/R01800>, <https://ld.stadt-zuerich.ch/statistics/code/R01600>, <https://ld.stadt-zuerich.ch/statistics/code/R01700>, <https://ld.stadt-zuerich.ch/statistics/code/R0KUNB>, <https://ld.stadt-zuerich.ch/statistics/code/R30000>, <https://ld.stadt-zuerich.ch/statistics/code/R20000>))
+  )
+  FILTER (
+    (?dimension46 = <https://ld.stadt-zuerich.ch/statistics/code/Jahr>)
+  )
+  FILTER (
+    (YEAR(?dimension24) = "2015"^^<http://www.w3.org/2001/XMLSchema#int>)
+  )
+}
+GROUP BY ?dimension0 ?dimension1 ?dimension2 ?dimension3 ?dimension4 ?dimension5 ?dimension6 ?dimension7 ?dimension8 ?dimension9 ?dimension10 ?dimension11 ?dimension12 ?dimension13 ?dimension14 ?dimension15 ?dimension16 ?dimension17 ?dimension18 ?dimension19 ?dimension20 ?dimension21 ?dimension22 ?dimension23 ?dimension24

@@ -1,0 +1,30 @@
+PREFIX ssz: <https://ld.stadt-zuerich.ch/statistics/>
+prefix cube: <https://cube.link/>
+prefix property: <https://ld.stadt-zuerich.ch/statistics/property/>
+prefix measure: <https://ld.stadt-zuerich.ch/statistics/measure/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix schema: <http://schema.org/>
+PREFIX p: <http://www.wikidata.org/prop/>
+PREFIX ps: <http://www.wikidata.org/prop/statement/>
+
+SELECT *
+WHERE {
+  
+  
+  ssz:AST-BTA a cube:Cube;
+      cube:observationSet/cube:observation ?obs.   
+  ?obs property:RAUM ?place_uri .
+  #     property:BTA <https://ld.stadt-zuerich.ch/statistics/code/BTA5000> .
+
+  ?place_uri skos:inScheme <https://ld.stadt-zuerich.ch/statistics/scheme/Quartier> ;
+             schema:name ?place ;
+             schema:sameAs ?wikidata_id .
+  
+  
+  BIND(IRI(?wikidata_id ) AS ?wikidata_iri ) .
+  SERVICE <https://query.wikidata.org/sparql> {
+    ?wikidata_iri p:P625/ps:P625 ?geometry .
+  }
+
+}
+LIMIT 10

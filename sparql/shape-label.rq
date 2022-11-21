@@ -1,0 +1,40 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX cube: <https://cube.link/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+#SELECT DISTINCT ?bnode_property ?dimension ?termSet
+
+INSERT {
+    GRAPH <https://lindas.admin.ch/stadtzuerich/shape-tmp> {
+
+  ?bnode_property schema:name ?dimensionName .
+  }
+}
+WHERE {
+  GRAPH <https://lindas.admin.ch/stadtzuerich/stat>
+  
+  {
+    
+    #SELECT DISTINCT ?cube ?cubeShape ?dimension ?bnode_property ?dimensionName  WHERE {
+    SELECT DISTINCT ?bnode_property ?dimensionName WHERE {
+  ?cube a cube:Cube ;
+       cube:observationConstraint ?cubeShape .
+  
+  ?cubeShape a cube:Constraint ;
+        sh:property ?bnode_property .
+  
+  ?bnode_property sh:in/rdf:rest*/rdf:first ?instances ;
+                  sh:path ?dimension .
+  
+  #?dimension a cube:KeyDimension .
+  
+  ?dimension a rdf:Property ;
+     schema:name ?dimensionName .
+
+
+  }
+  }
+} 
+#ORDER BY ?bnode_property
+#LIMIT 10

@@ -1,0 +1,48 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX cube: <https://cube.link/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT *
+FROM <https://lindas.admin.ch/stadtzuerich/stat>
+WHERE {
+
+  SELECT ?cube (CONCAT ( ?separator, ?dimensionKey ) AS ?finalLabel)
+  {
+  
+    VALUES ?cube { <https://ld.stadt-zuerich.ch/statistics/000201> <https://ld.stadt-zuerich.ch/statistics/000202> <https://ld.stadt-zuerich.ch/statistics/000203> <https://ld.stadt-zuerich.ch/statistics/000204> }
+    ?cube a cube:Cube ;
+      cube:observationConstraint ?cubeShape .
+    
+    ?cubeShape a cube:Constraint ;
+      sh:property ?bnode_property .
+    
+    ?bnode_property sh:path ?kennzahl .
+    
+    ?kennzahl a cube:MeasureDimension ;
+      schema:identifier ?kennzahlIdentifier .
+    
+    #BIND( IF(BOUND(?dimensionKey), "_", "") AS ?separator)
+    #BIND( IF(BOUND(?dimensionKey), CONCAT(?kennzahlIdentifier ,"_"), ?kennzahlIdentifier) AS ?separator)
+    {
+      SELECT ?cube (GROUP_CONCAT( ?dimensionIdentifier; separator="_") AS ?dimensionKey )
+      {
+        VALUES ?cube {<https://ld.stadt-zuerich.ch/statistics/000201> <https://ld.stadt-zuerich.ch/statistics/000202> <https://ld.stadt-zuerich.ch/statistics/000203> <https://ld.stadt-zuerich.ch/statistics/000204>}
+        ?cube a cube:Cube ;
+          cube:observationConstraint ?cubeShape .
+        
+        ?cubeShape a cube:Constraint ;
+          sh:property ?bnode_property .
+        
+        ?bnode_property sh:path ?dimension .
+               
+        FILTER( ?dimension NOT IN ( <https://ld.stadt-zuerich.ch/statistics/property/ZEIT>, <https://ld.stadt-zuerich.ch/statistics/property/RAUM> ))
+  
+        ?dimension a cube:KeyDimension ;
+          schema:identifier ?dimensionIdentifier .
+          
+      } GROUP BY ?cube
+    }
+  }
+}

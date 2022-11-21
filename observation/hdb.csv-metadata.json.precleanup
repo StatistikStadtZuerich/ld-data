@@ -1,0 +1,297 @@
+{
+	"@context": "http://www.w3.org/ns/csvw",
+	"url": "file:input/HDB.csv",
+	"dialect": {
+		"delimiter": ",",
+		"doubleQuote": true
+	},
+	"tableSchema": {
+		"aboutUrl": "https://ld.stadt-zuerich.ch/statistics/{KENNZAHL}-{DIMENSION1}-{DIMENSION2}-{DIMENSION3}-{DIMENSION4}-{DIMENSION5}/observation/{DIMENSIONCODE1}-{DIMENSIONCODE2}-{DIMENSIONCODE3}-{DIMENSIONCODE4}-{DIMENSIONCODE5}-{RAUM}-{ZEIT}",
+		"null": "Dummy",
+		"columns": [
+			{
+				"virtual": true,
+				"propertyUrl": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+				"valueUrl": "https://cube.link/Observation"
+			},
+			{
+				"propertyUrl": "http://schema.org/identifier",
+				"titles": "GESAMTCODE"
+			},
+			{
+				"propertyUrl": "http://example.org/GESAMTCODE_RCS",
+				"titles": "GESAMTCODE_RCS"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/statistics/property/ZEIT",
+				"titles": "ZEIT",
+				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/code/{ZEIT}"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/statistics/property/TIME",
+				"titles": "JAHR",
+				"valueUrl": "http://example.org/zeit/{JAHR}-{MONAT}-{TAG}"
+			},
+			{
+				"propertyUrl": "http://example.org/BEZUGSZEIT",
+				"titles": "BEZUGSZEIT"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/statistics/property/RAUM",
+				"titles": "RAUM",
+				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/code/{RAUM}"
+			},
+			{
+				"propertyUrl": "http://example.org/KENNZAHL",
+				"titles": "KENNZAHL"
+			},
+			{
+				"propertyUrl": "http://example.org/DIMENSION1",
+				"titles": "DIMENSION1"
+			},
+			{
+				"propertyUrl": "http://example.org/DIMENSION2",
+				"titles": "DIMENSION2"
+			},
+			{
+				"propertyUrl": "http://example.org/DIMENSION3",
+				"titles": "DIMENSION3"
+			},
+			{
+				"propertyUrl": "http://example.org/DIMENSION4",
+				"titles": "DIMENSION4"
+			},
+			{
+				"propertyUrl": "http://example.org/DIMENSION5",
+				"titles": "DIMENSION5"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/statistics/property/{DIMENSION1}",
+				"titles": "DIMENSIONCODE1",
+				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/code/{DIMENSIONCODE1}"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/statistics/property/{DIMENSION2}",
+				"titles": "DIMENSIONCODE2",
+				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/code/{DIMENSIONCODE2}"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/statistics/property/{DIMENSION3}",
+				"titles": "DIMENSIONCODE3",
+				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/code/{DIMENSIONCODE3}"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/statistics/property/{DIMENSION4}",
+				"titles": "DIMENSIONCODE4",
+				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/code/{DIMENSIONCODE4}"
+			},
+			{
+				"propertyUrl": "https://ld.stadt-zuerich.ch/statistics/property/{DIMENSION5}",
+				"titles": "DIMENSIONCODE5",
+				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/code/{DIMENSIONCODE5}"
+			},
+			{
+				"propertyUrl": "http://example.org/CODE",
+				"titles": "CODE"
+			},
+			{
+				"propertyUrl": "http://example.org/measure/{KENNZAHL}",
+				"titles": "WERT"
+			},
+			{
+				"propertyUrl": "http://example.org/REFERENZNUMMER",
+				"titles": "REFERENZNUMMER"
+			},
+			{
+				"propertyUrl": "http://example.org/QUELLE",
+				"titles": "QUELLEID"
+			},
+			{
+				"propertyUrl": "http://example.org/FUSSNOTEKENNZAHL",
+				"titles": "FUSSNOTEKENNZAHL"
+			},
+			{
+				"propertyUrl": "http://example.org/FUSSNOTEATTRIBUT",
+				"titles": "FUSSNOTEATTRIBUT"
+			},
+			{
+				"propertyUrl": "http://example.org/FUSSNOTEKENNZAHLATTRIBUT",
+				"titles": "FUSSNOTEKENNZAHLATTRIBUT"
+			},
+			{
+				"propertyUrl": "http://example.org/FUSSNOTEZEIT",
+				"titles": "FUSSNOTEZEIT"
+			},
+			{
+				"propertyUrl": "http://example.org/FUSSNOTERAUM",
+				"titles": "FUSSNOTERAUM"
+			},
+			{
+				"propertyUrl": "http://example.org/FUSSNOTEZELLE",
+				"titles": "FUSSNOTEZELLE"
+			},
+			{
+				"propertyUrl": "http://example.org/GLOSSARID",
+				"titles": "GLOSSARID"
+			},
+			{
+				"propertyUrl": "http://example.org/ANZ_GRUPPEN",
+				"titles": "ANZ_GRUPPEN"
+			},
+			{
+				"propertyUrl": "http://example.org/ERWARTETE_AKTUALISIERUNG",
+				"datatype": "date",
+				"titles": "ERWARTETE_AKTUALISIERUNG"
+			},
+			{
+				"propertyUrl": "http://example.org/DATENSTAND",
+				"datatype": "date",
+				"titles": "DATENSTAND"
+			},
+			{
+				"propertyUrl": "http://example.org/UPDATE",
+				"titles": "UPDATE"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "FREIGABEDATUM"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "PUBLIKATIONSDATUM"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "STICHTAGDATUM"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "PERIDODESTART"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "PERIODEENDE"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "ZEIT"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "TAG"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "MONAT"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "JAHR"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "PERIODESTART"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "RAUM"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "RAUMLANG"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "WIKIDATAURI"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "REFERENZTITEL"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "ORIGINALNUMMER"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "ORIGINALTITEL"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "SSZQUELLE"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "ELEMENT"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "AUSGABE"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "SEITE"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "BEMERKUNG"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DATENQUALITAET"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DATENSTATUS"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "RECORDSTATUS"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "PUBLIKATIONSSTATUS"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "FREIGABE"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "KEY_INFORMATION_ALL"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "CubeID"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "i"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "Text"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DIMENSIONCODE1"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DIMENSIONCODE2"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DIMENSIONCODE3"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DIMENSIONCODE4"
+			},
+			{
+				"suppressOutput": true,
+				"titles": "DIMENSIONCODE5"
+			}
+		]
+	}
+}

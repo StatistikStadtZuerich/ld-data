@@ -21,7 +21,7 @@ map DATENOBJEKTE from HDB_DATENOBJEKTE {
     dct.issued from DOMetadatenFreigabedatum with datatype xsd.date;
     dct.modified from DOAktualisierungsDatum with datatype xsd.date;
     ssz.legalFoundation template metaLegalIri with DOOGDRechtsgrundlagenID;
-    dct.spatialRelationship from DORaeumlicheBeziehung;
+    dct.spatial from DORaeumlicheBeziehung;
     dct.publisher template orgIri with DODienstabteilungID;
     dcat.theme from DOKategorie; // TODO: map values to IRIs from SKOS of opendata.swiss ? How to map list?
     dcat.keyword from DOSchluesselwoerter; // TODO: how to map list?

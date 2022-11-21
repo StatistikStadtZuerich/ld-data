@@ -13,3 +13,4 @@ input
 .env.*
 .project
 assets/cube/metadata.ttl
+backup

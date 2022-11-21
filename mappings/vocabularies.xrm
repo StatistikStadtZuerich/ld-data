@@ -190,7 +190,7 @@ vocabulary dct {
     publisher
     title
     license
-    spatialRelationship
+    spatial
     language
 }
 

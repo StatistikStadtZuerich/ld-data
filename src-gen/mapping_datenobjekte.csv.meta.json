@@ -63,7 +63,7 @@
 				"valueUrl": "https://ld.stadt-zuerich.ch/statistics/meta/legal/{DOOGDRechtsgrundlagenID}"
 			},
 			{
-				"propertyUrl": "http://purl.org/dc/terms/spatialRelationship",
+				"propertyUrl": "http://purl.org/dc/terms/spatial",
 				"titles": "DORaeumlicheBeziehung"
 			},
 			{

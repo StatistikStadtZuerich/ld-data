@@ -13,7 +13,7 @@ If you have questions about the pipeline or the data set, create a new issue in 
 * `input` - Contains static metadata that is read in the pipeline.
 * `lib` - Contains custom code used in the RDF production pipeline. 
 * `mappings` - Contains all the [XRM](https://github.com/zazuko/expressive-rdf-mapper) mapping files needed to map the data to RDF. This is the single source of truth for the mapping of all the dimensions.
-* `observatios` - Contains the mapping for the observations itself. This is the single source of truth for the mapping of the main observation. For historical reasons this is still maintained in a plain JSON file (CSVW standard) instead of XRM. 
+* `observation` - Contains the mapping for the observations itself. This is the single source of truth for the mapping of the main observation. For historical reasons this is still maintained in a plain JSON file (CSVW standard) instead of XRM (but it is generated based on the XRM version). 
 * `pipelines` - Contains the [barnard59](https://github.com/zazuko/barnard59) pipelines that run the conversion itself. Barnard59 is a declarative way to run RDF conversion pipelines.
 * `scripts` - Contains the shell scripts needed to run the pipeline.
 * `sparql` - Contains SPARQL queries that are run in the pipeline.
@@ -55,6 +55,10 @@ Die Pipeline besteht immer aus zwei Git Branches:
 
 * `develop`: Entwicklung Umgebung. Sollte für Tests & Bugfixes verwendet werden. Für diese Umgebung wird auf die `integ`-Anlieferung auf dem sftp-Server zugegriffen. Die Daten werden auf die Integrations-Umgebung von LINDAS gespielt, erreichbar unter https://ld.integ.stadt-zuerich.ch/.
 * `master`: Produktive Umgebung. Dieser Git-Branch ist geschützt und kann nur über Pull-requests geschrieben werden. Damit soll sichergestellt werden, dass nur getestete Versionen der Pipeline produktiv geschaltet werden.  Für diese Umgebung wird auf die `prod`-Anlieferung auf dem sftp-Server zugegriffen. Die Daten werden auf die Produktions-Umgebung von LINDAS gespielt, erreichbar unter https://ld.stadt-zuerich.ch/.
+
+#### Onboarding auf Gitlab
+
+Neue Benutzer auf Gitlab werden über ein Ticket bei VSHN erstellt. Dies kann durch ein Mitarbeiter bei Zazuko beantragt werden. Dies geschieht über ein Ticket im Ticketing-System von Zazuko. Die entsprechende Email-Adresse ist intern bekannt, wird hier aber nicht weiter dokumentiert.
 
 #### Per Hook
 
@@ -104,6 +108,10 @@ Mit dem entsprechenden Passwort können die Daten wie folgt in eine Datei geschr
 Die Datei besteht aus N-Triples beziehungsweise N-Quads und kann sehr effektiv komprimiert werden.
 
 Für die PROD-Umgebung ist die URL mit `https://stardog.cluster.ldbar.ch` zu ersetzen.
+
+## Publikation der Pipeline
+
+Die Pipeline wird an zwei Orten publiziert (sogenannte "[Remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)"), für die Öffentlichkeit auf GitHub & für das automatisierte Ausführen in LINDAS bei der GitLab Instanz des Bundes. Die Branches `master` und `develop` müssen in beiden Umgebungen bestehen. Relevant für die Ausführung ist aber ausschliesslich die Version auf GitLab. Wenn es zwischen den Remotes einen Unterschied gibt, sollte immer die Version auf GitLab als Referenz angeschaut werden.
 
 # License
 This program is licensed under [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause):

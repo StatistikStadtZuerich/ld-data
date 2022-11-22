@@ -244,6 +244,7 @@ vocabulary ssz {
 
   classes
     Attribute
+    Objekte
     LegalFoundation
 
   properties

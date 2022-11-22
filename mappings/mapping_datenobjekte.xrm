@@ -4,7 +4,7 @@ map DATENOBJEKTE from HDB_DATENOBJEKTE {
 	subject template metaObjectIri with id;
 
 	types
-		schema.Dataset
+		ssz.Objekte
 
   properties
     schema.description from DOBeschreibung;

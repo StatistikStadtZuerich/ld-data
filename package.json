@@ -7,7 +7,7 @@
   "scripts": {
     "preinstall": "mkdirp output input assets/cube",
     "postinstall": "curl -H 'Accept: text/turtle' --data-urlencode query@sparql/temporary-cube-labels.rq $QUERYENDPOINT -o assets/cube/metadata.ttl",
-    "fetch": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/fetch pipelines/fetch.ttl --variable=SSH_HOST --variable=SSH_PORT --variable=SSH_USER --variable=SSH_PRIVATE_KEY",
+    "fetch": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/fetch pipelines/fetch.ttl --variable=SSH_HOST --variable=SSH_PORT --variable=SSH_USER --variable=SSH_PRIVATE_KEY --variable=SFTP_DIR",
     "fetchDiff": "dotenv -e .env.defaults -e .env -- ./start.sh FetchDiff",
     "output:file": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/toFile pipelines/main.ttl",
     "file:store": "barnard59 run -v --pipeline=http://ssz.lindas.ch/pipeline/fileToStore pipelines/main.ttl --variable=ENDPOINT --variable=GRAPHSTORE_USERNAME --variable=GRAPHSTORE_PASSWORD",

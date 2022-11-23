@@ -21,18 +21,10 @@
     p:value "input"
   ]
   , [ a p:Variable;
-    p:name "sourceFolder";
-    p:value "upload/integ"
+    p:name "SFTP_DIR";
+    p:value ""
   ]
   .
-
-<sourceFullVar> a p:Variable;
-  p:name "sourceFolder";
-  p:value "/upload/integ/HDB_Full.zip".
-
-<sourceDiffVar> a p:Variable;
-  p:name "sourceFolder";
-  p:value "/upload/integ/HDB_Diff.zip".
 
 #
 # fetch
@@ -64,7 +56,7 @@
     code:value "SSH_PORT"^^p:VariableName
   ], [
     code:name "pathname";
-    code:value "sourceFolder"^^p:VariableName
+    code:value "SFTP_DIR"^^p:VariableName
   ], [
     code:name "privateKey";
     code:value "SSH_PRIVATE_KEY"^^p:VariableName

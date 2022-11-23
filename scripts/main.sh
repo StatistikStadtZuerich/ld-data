@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -u
 echo "Working in environment: $SFTPENV"
-echo "df /upload/$SFTPENV/HDB_Full.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
+export SFTP_DIR=/upload/$SFTPENV
+echo "df $SFTP_DIR/HDB_Full.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
 if [ $? -eq 0 ]
 then
     set -eo pipefail
@@ -12,12 +13,12 @@ then
     npm run file:store
     curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/shape-filter.rq" $ENDPOINT/update
     curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/link-raw-cube-with-void.rq" $ENDPOINT/update
-    #echo "rename /upload/$SFTPENV/HDB_Full.zip /upload/$SFTPENV/done/HDB_Full.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
+    #echo "rename $SFTP_DIR/HDB_Full.zip $SFTP_DIR/done/HDB_Full.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
     set +eo pipefail
 else
     echo "File HDB_Full.zip does not exist, checking for diff delivery..."
 
-    echo "df /upload/$SFTPENV/HDB_Diff.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
+    echo "df $SFTP_DIR/HDB_Diff.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
     if [ $? -eq 0 ]
     then
       set -eo pipefail
@@ -27,7 +28,7 @@ else
       npm run output:file
       npm run file:store:append
       #curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/diff-delivery-update-active-graph.rq" $ENDPOINT/update
-      #echo "rename /upload/$SFTPENV/HDB_Diff.zip /upload/$SFTPENV/done/HDB_Diff.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
+      #echo "rename $SFTP_DIR/HDB_Diff.zip $SFTP_DIR/done/HDB_Diff.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
       set +eo pipefail
     else
       echo "File HDB_Diff.zip does not exist either, aborting..."

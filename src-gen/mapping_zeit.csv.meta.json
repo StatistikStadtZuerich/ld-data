@@ -20,7 +20,11 @@
 			},
 			{
 				"propertyUrl": "http://schema.org/name",
-				"titles": "ZEIT"
+				"titles": "STICHTAGDATUM"
+			},
+			{
+				"propertyUrl": "http://schema.org/name",
+				"titles": "PERIODEENDE"
 			},
 			{
 				"propertyUrl": "http://schema.org/termCode",

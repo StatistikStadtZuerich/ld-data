@@ -36,6 +36,10 @@ Our barnard59 mapping pipeline [provides a module](https://github.com/rdf-ext/rd
 
 The pipeline is run in a CI-Job on GitLab. It is using the standard node.js docker file to execute the RDF pipeline. Details for the configuration and the execution of the scripts can be found in the [Gitlab YAML](.gitlab-ci.yml) file.
 
+### Infrastructure Status
+
+If you want to know if the infrastructure is up, check the status page at https://status.ldbar.ch/
+
 ### Usage
 
 You can run the pipeline manually given that you have a valid SSH key to get the input data from the sftp server. We also need a unix-like environment like MacOS or Linux and node.js to execute the pipeline. To install all dependencies run `npm install` in the root of this repository.

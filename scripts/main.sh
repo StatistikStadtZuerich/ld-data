@@ -13,7 +13,7 @@ then
     npm run file:store
     curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/shape-filter.rq" $ENDPOINT/update
     curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/link-raw-cube-with-void.rq" $ENDPOINT/update
-    #echo "rename $SFTP_DIR/HDB_Full.zip $SFTP_DIR/done/HDB_Full.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
+    echo "rename $SFTP_DIR/HDB_Full.zip $SFTP_DIR/done/HDB_Full.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
     set +eo pipefail
 else
     echo "File HDB_Full.zip does not exist, checking for diff delivery..."
@@ -25,10 +25,11 @@ else
       echo "File HDB_Diff.zip exists, running diff pipeline"
       npm run fetchDiff
       unzip input/HDB_Full.zip -d input # should be part of pipeline
+      touch input/HDB.csv # make sure pipeline works with metadata only
       npm run output:file
       npm run file:store:append
       #curl -u $GRAPHSTORE_USERNAME:$GRAPHSTORE_PASSWORD  --data-urlencode "query@sparql/diff-delivery-update-active-graph.rq" $ENDPOINT/update
-      #echo "rename $SFTP_DIR/HDB_Diff.zip $SFTP_DIR/done/HDB_Diff.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
+      echo "rename $SFTP_DIR/HDB_Diff.zip $SFTP_DIR/done/HDB_Diff.zip" | sftp -b - statistikstadtzuerich@sftp.zazukoians.org
       set +eo pipefail
     else
       echo "File HDB_Diff.zip does not exist either, aborting..."

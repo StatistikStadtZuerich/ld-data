@@ -23,7 +23,7 @@ else
     then
       set -eo pipefail
       echo "File HDB_Diff.zip exists, running diff pipeline"
-      npm run fetchDiff
+      npm run fetch
       unzip input/HDB_Full.zip -d input # should be part of pipeline
       touch input/HDB.csv # make sure pipeline works with metadata only
       npm run output:file

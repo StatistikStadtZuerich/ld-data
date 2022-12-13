@@ -14,7 +14,12 @@ cache:
   paths:
     - node_modules/
 
+stages:
+  - pipeline
+  - metadata
+
 pipeline_prod:
+  stage: pipeline
   only:
     - master
 #   - develop
@@ -26,6 +31,7 @@ pipeline_prod:
     - ./scripts/main.sh
 
 pipeline_int:
+  stage: pipeline
   only:
     - develop
   tags:
@@ -57,3 +63,12 @@ pipeline_int:
 #    paths:
 #      - output/output.nt
 #    expire_in: 1 day
+
+metadata:
+  stage: metadata
+  environment:
+    name: $CI_ENVIRONMENT_NAME
+  script:
+    - curl -LO https://github.com/Orange-OpenSource/hurl/releases/download/1.8.0/hurl_1.8.0_amd64.deb
+    - apt update && apt install ./hurl_1.8.0_amd64.deb
+    - hurl -V

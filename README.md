@@ -1,6 +1,6 @@
 # Statistik Stadt Zürich: RDF Cube Pipeline
 
-The repository has been archived (Hansjörg Stalder).
+The repository has been archived (22.07.2026, Hansjörg Stalder).
 
 This repository contains the pipeline to convert HDB data as CSV to RDF. As representation, [RDF Cube Schema](https://github.com/zazuko/rdf-cube-schema) is used. 
 

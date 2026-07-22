@@ -1,5 +1,7 @@
 # Statistik Stadt Zürich: RDF Cube Pipeline
 
+The repository has been archived (Hansjörg Stalder).
+
 This repository contains the pipeline to convert HDB data as CSV to RDF. As representation, [RDF Cube Schema](https://github.com/zazuko/rdf-cube-schema) is used. 
 
 The pipeline is run in a private Gitlab instance, the result is published on https://ld.stadt-zuerich.ch/sparql/. The SPARQL query endpoint is available at `https://ld.stadt-zuerich.ch/query`
